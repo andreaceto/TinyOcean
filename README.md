@@ -1,2 +1,2 @@
 # TinyOcean
-TSW E-Commerce Project for University of Study of Salerno
+TSW E-Commerce Project for University of Salerno
