@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-26T13:42:23.110Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="AN2pRVJ8M-NUY4WEY_O6" version="17.2.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-26T13:57:51.503Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36" etag="D1OTM7v8f-ZSxdk7JZg8" version="17.2.4" type="github">
   <diagram id="3ahqWW-LntTtcB9mee3_" name="Page-1">
     <mxGraphModel dx="1483" dy="781" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -265,6 +265,26 @@
         </mxCell>
         <mxCell id="eOsLIqNuxfIvkPiwRa_p-85" value="Saldo" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="1080" y="690" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eOsLIqNuxfIvkPiwRa_p-90" value="&lt;u&gt;ID&lt;/u&gt;" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="620" y="780" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eOsLIqNuxfIvkPiwRa_p-91" value="FOTO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="620" y="750" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="eOsLIqNuxfIvkPiwRa_p-92" value="Sorgente" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="720" y="780" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="eOsLIqNuxfIvkPiwRa_p-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;fontSize=12;" edge="1" parent="1" source="eOsLIqNuxfIvkPiwRa_p-93" target="eOsLIqNuxfIvkPiwRa_p-75">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="750" />
+              <mxPoint x="155" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eOsLIqNuxfIvkPiwRa_p-93" value="Articolo" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="820" y="780" width="100" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
