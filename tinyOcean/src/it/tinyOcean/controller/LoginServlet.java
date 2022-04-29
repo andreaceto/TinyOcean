@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	static UtenteDAO UserDAO = new UtenteDAO();
+	static UtenteDAO utenteDAO = new UtenteDAO();
 
 public void doGet(HttpServletRequest request, HttpServletResponse response) 
 			           throws ServletException, java.io.IOException {
@@ -30,7 +30,7 @@ try
      UtenteBean user = new UtenteBean();
      user.setUsername(request.getParameter("un"));
      user.setPassword(request.getParameter("pw"));
-     user = UtenteDAO.doRetrieve(user);
+     user = utenteDAO.doRetrieve(user);
 	   		    
      if (user.isValid())
      {

@@ -31,7 +31,7 @@ public class FotoDAO {
 		}
 	}
 
-	public synchronized List<FotoBean> getPhotos(ProductBean product) {
+	public synchronized List<FotoBean> getPhotos(ArticoloBean product) {
 		List<FotoBean> photos = new LinkedList<FotoBean>();
 		PreparedStatement preparedStatement = null;
 		String SearchQuery = "Select foto.* FROM foto Join articolo ON " + "foto.articolo=articolo.id "
@@ -45,7 +45,7 @@ public class FotoDAO {
 
 			while (rs.next()) {
 				FotoBean bean = new FotoBean();
-				Blob blob = rs.getBlob("foto");
+				Blob blob = rs.getBlob("sorgente");
 				InputStream inputStream = blob.getBinaryStream();
 				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 				byte[] buffer = new byte[4096];
@@ -67,8 +67,8 @@ public class FotoDAO {
 				photos.add(bean);
 
 			}
-connection.close();
-rs.close();
+			connection.close();
+			rs.close();
 		}
 
 		catch (Exception ex) {
