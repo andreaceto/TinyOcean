@@ -31,8 +31,8 @@ public class MetodoPagamentoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		long numCarta = Long.parseLong(request.getParameter("numCarta"));
 		int tipo = (request.getParameter("tipo")=="carta di credito" ) ? 0: 1;
+		long numCarta = Long.parseLong(request.getParameter("numCarta"));
 		LocalDate scadenza = LocalDate.parse(request.getParameter("scadenza"));
 		String titolare = request.getParameter("titolare");
 		String indirizzoFatt = request.getParameter("indirizzoFatt");
@@ -41,8 +41,8 @@ public class MetodoPagamentoServlet extends HttpServlet {
 		MetodoPagamentoBean paymentMethod = new MetodoPagamentoBean();
 		
 		UtenteBean user = (UtenteBean) request.getSession().getAttribute("currentSessionUser");
-		paymentMethod.setNumCarta(numCarta);
 		paymentMethod.setTipo(tipo);
+		paymentMethod.setNumCarta(numCarta);
 		paymentMethod.setScadenza(scadenza);
 		paymentMethod.setTitolare(titolare);
 		paymentMethod.setIndirizzoFatt(indirizzoFatt);
@@ -50,7 +50,7 @@ public class MetodoPagamentoServlet extends HttpServlet {
 		
 		MetodoPagamentoDAO.doSave(user, paymentMethod);
 		
-		response.sendRedirect("CheckoutPage.jsp");
+		response.sendRedirect("checkoutPage.jsp");
 		}
 
 	/**

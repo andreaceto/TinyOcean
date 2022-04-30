@@ -68,7 +68,7 @@ public class UserPageServlet extends HttpServlet {
 		}
 		session.setAttribute("indirizzi", indirizzi);
 		session.setAttribute("metodi", metodiPagamento);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/UserPage.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/userPage.jsp");
 		dispatcher.include(request, response);
 
 	}

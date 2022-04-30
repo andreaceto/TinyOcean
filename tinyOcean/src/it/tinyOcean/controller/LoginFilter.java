@@ -13,7 +13,7 @@ import javax.servlet.http.*;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter( urlPatterns={ "/CheckoutPage.jsp/*","/UserPage"},
+@WebFilter( urlPatterns={ "/checkoutPage.jsp/*","/UserPage"},
 		servletNames={"UserPage"})
 public class LoginFilter implements Filter {
 	@Override

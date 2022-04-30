@@ -44,11 +44,11 @@ public class AdminFilter implements Filter {
 		UtenteBean user=(UtenteBean) session.getAttribute("currentSessionUser");
 		if(session == null || session.getAttribute("currentSessionUser") == null)
 		{
-			response.sendRedirect(request.getContextPath()+"/AccessDenied.jsp?"); 
+			response.sendRedirect(request.getContextPath()+"/accessDenied.jsp?"); 
 		}
 		else if(!(user.isAdmin()))
 		{ 
-			response.sendRedirect(request.getContextPath()+"/AccessDenied.jsp?"); 
+			response.sendRedirect(request.getContextPath()+"/accessDenied.jsp?"); 
 		}
 		
 		else {

@@ -48,7 +48,7 @@ public class IndirizzoServlet extends HttpServlet {
 		address.setCitta(citta);
 		address.setProvincia(provincia);
 		IndirizzoDAO.doSave(user, address);
-		response.sendRedirect("CheckoutPage.jsp");
+		response.sendRedirect("checkoutPage.jsp");
 
 	}
 

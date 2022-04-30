@@ -41,7 +41,7 @@ public class CatalogoServlet extends HttpServlet {
 			System.out.println("Error:" + e.getMessage());
 		}
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Admin/Catalogo.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/catalogo.jsp");
 		dispatcher.include(request, response);
 	}
 

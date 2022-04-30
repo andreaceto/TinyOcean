@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
 import it.tinyOcean.model.ArticoloBean;
@@ -13,6 +14,7 @@ import it.tinyOcean.model.ArticoloDAO;
 /**
  * Servlet implementation class ProductControl
  */
+@WebServlet("/product")
 public class ArticoloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -39,7 +41,7 @@ public class ArticoloServlet extends HttpServlet {
 					int id = Integer.parseInt(request.getParameter("id"));
 					ArticoloBean product = new ArticoloBean();
 					product = model.doRetrieveByKey(id);
-					Integer newId = Integer.parseInt(request.getParameter("NewID"));
+					Integer newId = Integer.parseInt(request.getParameter("newID"));
 					String produttore = request.getParameter("produttore");
 					String nome = request.getParameter("nome");
 					String descrizione = request.getParameter("descrizione");

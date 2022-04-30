@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import it.tinyOcean.model.*;
 
 /**
- * Servlet implementation class UserControlServlet
+ * Servlet implementation class UserServlet
  */
 @WebServlet("/UserServlet")
 public class UserServlet extends HttpServlet {
