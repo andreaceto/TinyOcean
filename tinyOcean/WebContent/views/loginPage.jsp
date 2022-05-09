@@ -33,7 +33,7 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 	<h3 style="text-align: center">Hai già un account?</h3>
 	
 	<div class=login>
-		<form action="/LoginServlet.java" method="get" class=login id="loginform">
+		<form action="Login" class=login id="loginform">
 			<label><input class=login type="text" name="un" placeholder="Username"></label> <br><br>
 			<label><input class=login type="password" name="pw" placeholder="Password" ></label><br><br>
 			<button class=btn type="submit" name="login">Login</button>

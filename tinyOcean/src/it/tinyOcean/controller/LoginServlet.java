@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import it.tinyOcean.model.*;
 
-import javax.servlet.annotation.*;
 
 /**
  * Servlet implementation class LoginServlet
