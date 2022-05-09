@@ -25,7 +25,7 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 Collection<?> products = (Collection<?>) request.getAttribute("products");
 FotoDAO fotodao = new FotoDAO();
 if (products == null) {
-	response.sendRedirect("./articolo");
+	response.sendRedirect("/Articolo");
 	return;
 }
 %>
@@ -51,7 +51,7 @@ if (products == null) {
 	
 		<div class="grid-item">
 			<div class="thumbnail">
-				<a href="articolo?action=read&id=<%=bean.getId()%>">
+				<a href="Articolo?action=read&id=<%=bean.getId()%>">
 					<img src="data:image/jpg;base64,<%=foto.get(0).getBase64img()%>" width=100% height=300 />
 				</a>
 			</div>
