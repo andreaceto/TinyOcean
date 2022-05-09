@@ -19,17 +19,19 @@ import it.tinyOcean.model.MetodoPagamentoBean;
 import it.tinyOcean.model.MetodoPagamentoDAO;
 import it.tinyOcean.model.UtenteBean;
 
+
+
 /**
- * Servlet implementation class UserPageServlet
+ * Servlet implementation class CheckOutServlet
  */
-@WebServlet("/UserPage")
-public class UserPageServlet extends HttpServlet {
+@WebServlet("/CheckOut")
+public class CheckOutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UserPageServlet() {
+    public CheckOutServlet() {
         super();
         
     }
@@ -45,7 +47,6 @@ public class UserPageServlet extends HttpServlet {
 		
 		List<IndirizzoBean> addresses = addressDAO.getAddresses(user);
 		List<String> indirizzi = new LinkedList<String>();
-		
 		for (IndirizzoBean address : addresses) {
 			String indirizzo;
 			indirizzo = address.getVia() + " " + address.getNumCivico() + " " + address.getCitta() + " "
@@ -56,19 +57,18 @@ public class UserPageServlet extends HttpServlet {
 
 	
 		List<MetodoPagamentoBean> paymentMethods = paymentMethodDAO.getPaymentMethods(user);
+
 		List<String> metodiPagamento = new ArrayList<String>();
-		
 		for (MetodoPagamentoBean paymentMethod : paymentMethods) {
 			String metodoPagamento;
-			metodoPagamento = paymentMethod.getNumCarta() + " " + paymentMethod.getTipo() + " " 
-			+ paymentMethod.getTitolare() + " " + paymentMethod.getScadenza() + " "
-			+ paymentMethod.getIndirizzoFatt();
+			metodoPagamento = paymentMethod.getNumCarta() + " " + paymentMethod.getTipo() + " " + paymentMethod.getScadenza() + " "
+								+ paymentMethod.getTitolare()+ " " + paymentMethod.getIndirizzoFatt();
 
 			metodiPagamento.add(metodoPagamento);
 		}
 		session.setAttribute("indirizzi", indirizzi);
 		session.setAttribute("metodi", metodiPagamento);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/userPage.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/checkoutPage.jsp");
 		dispatcher.include(request, response);
 
 	}
@@ -77,7 +77,7 @@ public class UserPageServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		doGet(request, response);
 	}
 

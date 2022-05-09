@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class PaymentMethodControl
  */
-@WebServlet("/MetodoPagamentoServlet")
+@WebServlet("/MetodoPagamento")
 public class MetodoPagamentoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	static MetodoPagamentoDAO MetodoPagamentoDAO = new MetodoPagamentoDAO();

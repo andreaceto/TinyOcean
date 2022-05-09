@@ -10,11 +10,12 @@ import javax.servlet.http.*;
 
 import it.tinyOcean.model.ArticoloBean;
 import it.tinyOcean.model.ArticoloDAO;
+import it.tinyOcean.model.Cart;
 
 /**
  * Servlet implementation class ProductControl
  */
-@WebServlet("/product")
+@WebServlet("/Articolo")
 public class ArticoloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -26,16 +27,29 @@ public class ArticoloServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
+		Cart cart = (Cart) request.getSession().getAttribute("cart");
+		if (cart == null) {
+			cart = new Cart();
+			request.getSession().setAttribute("cart", cart);
+		}
+		
 		String action = request.getParameter("action");
 
 		try {
 			if (action != null) {
-				if (action.equalsIgnoreCase("read")) {
+				if (action.equalsIgnoreCase("addC")) {
+					int id = Integer.parseInt(request.getParameter("id"));
+					cart.addProduct(id);
+				} else if (action.equalsIgnoreCase("deleteC")) {
+					int id = Integer.parseInt(request.getParameter("id"));
+					cart.deleteProduct(id);
+					request.getRequestDispatcher("cart.jsp").forward(request, response);
+				}else if (action.equalsIgnoreCase("read")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					request.removeAttribute("product");
 					request.setAttribute("product", model.doRetrieveByKey(id));
-					request.getRequestDispatcher("productDetails.jsp").forward(request, response);
+					request.getRequestDispatcher("/views/productDetails.jsp").forward(request, response);
 
 				} else if (action.equalsIgnoreCase("update")) {
 					int id = Integer.parseInt(request.getParameter("id"));
@@ -139,7 +153,8 @@ public class ArticoloServlet extends HttpServlet {
 			System.out.println("Error:" + e.getMessage());
 		}
 		
-		
+		request.getSession().setAttribute("cart", cart);
+		request.setAttribute("cart", cart);
 		
 		String sort = request.getParameter("sort");
 
@@ -150,7 +165,7 @@ public class ArticoloServlet extends HttpServlet {
 			System.out.println("Error:" + e.getMessage());
 		}
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Homepage.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/Homepage.jsp");
 		dispatcher.include(request, response);
 	}
 

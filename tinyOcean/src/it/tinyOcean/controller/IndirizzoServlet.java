@@ -13,7 +13,7 @@ import it.tinyOcean.model.*;
 /**
  * Servlet implementation class AddressControl
  */
-@WebServlet("/IndirizzoServlet")
+@WebServlet("/Indirizzo")
 public class IndirizzoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	static IndirizzoDAO IndirizzoDAO = new IndirizzoDAO();

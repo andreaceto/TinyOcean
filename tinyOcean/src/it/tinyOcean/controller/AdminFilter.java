@@ -17,7 +17,8 @@ import it.tinyOcean.model.UtenteBean;
 /**
  * Servlet Filter implementation class AdminFilter
  */
-@WebFilter(urlPatterns = { "/Admin/*" ,"/Catalogo/*"})
+@WebFilter( urlPatterns={"/views/admin/*"},
+servletNames={"/Catalogo", "/OrdineArchivio"})
 public class AdminFilter implements Filter {
 
     /**
