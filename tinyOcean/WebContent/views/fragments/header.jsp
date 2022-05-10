@@ -18,11 +18,11 @@
 					<li class="nav-right"><a href="#!">Ciao, Accedi</a>
 					<ul class="nav-dropdown">
 							<li><a href="./loginPage.jsp">Accedi</a></li>
-							<li><a href="./UserPage.jsp">Il mio account</a></li>
-							<li><a href="#">I miei ordini</a></li> <!-- da implementare -->
+							<li><a href="./UserPage">Il mio account</a></li>
+							<li><a href="./OrdineStoria">I miei ordini</a></li>
 					</ul></li>		
-					<li><a href="#">Storico ordini</a></li> <!-- da implementare -->
-					<li><a href="#">Carrello</a></li> <!-- da implementare -->
+					<li><a href="./OrdineStoria">Storico ordini</a></li>
+					<li><a href="./cart.jsp">Carrello</a></li>
 				</ul>
 			</nav>
 		</div>

@@ -3,6 +3,7 @@ package it.tinyOcean.controller;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +14,7 @@ import it.tinyOcean.model.*;
 /**
  * Servlet implementation class LoginServlet
  */
-//@WebServlet("/Login")
+@WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -41,11 +42,11 @@ public class LoginServlet extends HttpServlet {
 			        
 		          HttpSession session = request.getSession(true);	    
 		          session.setAttribute("currentSessionUser",user); 
-		          response.sendRedirect("Homepage.jsp"); //logged-in page      		
+		          response.sendRedirect("views/Homepage.jsp"); //logged-in page      		
 		     }
 			        
 		     else 
-		          response.sendRedirect("loginPage.jsp?login=wrong"); //error page 
+		          response.sendRedirect("views/loginPage.jsp?login=wrong"); //error page 
 		}catch (Throwable theException) 	    
 		{
 		     System.out.println(theException); 

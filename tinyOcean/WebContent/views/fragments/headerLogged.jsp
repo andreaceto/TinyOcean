@@ -21,19 +21,19 @@
 						<a href="#!">Ciao, <%=((UtenteBean) session.getAttribute("currentSessionUser")).getNome()%></a>
 						<ul class="nav-dropdown">
 							<li><a href="./UserPage">Il mio account</a></li>
-							<li><a href="">I miei ordini</a></li> <!-- da implementare -->
+							<li><a href="./OrdineStoria">I miei ordini</a></li>
 							<li><a href="./Logout">Esci</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Storico ordini</a></li> <!-- da implementare -->
-					<li><a href="#">Carrello</a></li> <!-- da implementare -->
+					<li><a href="./OrdineStoria">Storico ordini</a></li>
+					<li><a href="./cart.jsp">Carrello</a></li>
 
 					<%
 					if (((UtenteBean) session.getAttribute("currentSessionUser")).isAdmin())
 					{ 
 					%>
 					
-						<li><a href="#">Storico ordini admin</a></li> <!-- da implementare -->
+						<li><a href="./OrdineArchivio">Storico ordini admin</a></li>
 						<li><a href="./Catalogo">Catalogo</a></li>
 					
 					<%

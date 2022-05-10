@@ -25,7 +25,7 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 Collection<?> products = (Collection<?>) request.getAttribute("products");
 FotoDAO fotodao = new FotoDAO();
 if (products == null) {
-	response.sendRedirect("/Articolo");
+	response.sendRedirect("./Articolo");
 	return;
 }
 %>
@@ -58,7 +58,7 @@ if (products == null) {
 			<div class="item-description">
 				<h4><%=bean.getNome()%></h4>
 				<h5><%=String.format("%.2f", bean.getPrezzo())%> &euro;</h5>
-				<h6><a href="#">Aggiungi al carrello</a></h6> <!-- da implementare -->
+				<h6><a href="Articolo?action=addC&id=<%=bean.getId()%>">Aggiungi al carrello</a></h6>
 			</div>
 		</div>
 
@@ -72,6 +72,5 @@ if (products == null) {
 		%>
 	</div>
 </body>
+	<%@ include file="./fragments/footer.jsp"%>
 </html>
-
-<%@ include file="./fragments/footer.jsp"%>

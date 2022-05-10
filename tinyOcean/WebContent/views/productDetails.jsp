@@ -54,8 +54,8 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 			</table>
 			<br>
 			<div class="wrapper">
-				<form class=details action="#" method="post" id="checkout">		<!-- da implementare -->
-					<button class=btn type="submit">Aggiungi al carrello</button> 
+				<form class=details action="Articolo?action=addC&id=<%=product.getId()%>" method="post" id="checkout">
+					<button class=btn type="submit">Aggiungi al carrello</button>
 				</form>
 			</div>
 		</div>
