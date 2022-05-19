@@ -1,5 +1,5 @@
-<%@page import="it.tinyOcean.model.UtenteBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="it.tinyOcean.model.UtenteBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 	<section class="navigation">
 		<div class="nav-container">
 			<div class="brand">
-				<a href="./Homepage.jsp">Tiny Ocean</a>
+				<a href="./views/Homepage.jsp">Tiny Ocean</a>
 			</div>
 			
 			<nav>

@@ -1,13 +1,11 @@
-<%@page import="it.tinyOcean.model.FotoBean"%>
-<%@page import="it.tinyOcean.model.FotoDAO"%>
-<%@page import="it.tinyOcean.model.ArticoloBean"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="it.tinyOcean.model.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.awt.image.*"%>
 <%@page import="javax.imageio.ImageIO"%>
 <%@page import="javax.xml.*"%>
 
-<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <% 
 if (session == null || session.getAttribute("currentSessionUser") == null){ 
