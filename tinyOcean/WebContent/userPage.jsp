@@ -78,7 +78,7 @@
 				</select>
 				<br>
 				<div class="user-link">
-					<a href=addressRegistration.jsp>Inserisci un nuovo indirizzo</a>
+					<a href="addressRegistration.jsp">Inserisci un nuovo indirizzo</a>
 				</div>
 				<br>
 				</div>
@@ -108,7 +108,7 @@
 					</select>
 					<br>
 					<div class="user-link">
-						<a href=paymentMethodRegistration.jsp>Inserisci un nuovo metodo di pagamento</a>
+						<a href="paymentMethodRegistration.jsp">Inserisci un nuovo metodo di pagamento</a>
 					</div>
 					<br>
 				</div>

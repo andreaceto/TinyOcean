@@ -10,7 +10,7 @@
 		<div class="footer-left">
 			<h3>Tiny<span>Ocean</span></h3>
 			<p class="footer-links">
-				<a href="./Homepage.jsp" class="link-1">Home</a>
+				<a href="Homepage.jsp" class="link-1">Home</a>
 				<a href="#">Contatti</a>
 			</p>
 			<p class="footer-company-name">Tiny Ocean &copy;2022</p>

@@ -42,11 +42,11 @@ public class LoginServlet extends HttpServlet {
 			        
 		          HttpSession session = request.getSession(true);	    
 		          session.setAttribute("currentSessionUser",user); 
-		          response.sendRedirect("views/Homepage.jsp"); //logged-in page      		
+		          response.sendRedirect("Homepage.jsp"); //logged-in page      		
 		     }
 			        
 		     else 
-		          response.sendRedirect("views/loginPage.jsp?login=wrong"); //error page 
+		          response.sendRedirect("loginPage.jsp?login=wrong"); //error page 
 		}catch (Throwable theException) 	    
 		{
 		     System.out.println(theException); 

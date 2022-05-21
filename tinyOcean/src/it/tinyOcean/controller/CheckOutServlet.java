@@ -68,7 +68,7 @@ public class CheckOutServlet extends HttpServlet {
 		}
 		session.setAttribute("indirizzi", indirizzi);
 		session.setAttribute("metodi", metodiPagamento);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/checkoutPage.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/checkoutPage.jsp");
 		dispatcher.include(request, response);
 
 	}

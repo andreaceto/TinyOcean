@@ -51,10 +51,10 @@ public class IndirizzoDAO {
 			while (rs.next()) {
 				IndirizzoBean bean = new IndirizzoBean();
 				bean.setVia(rs.getString("via"));
-				bean.setNumCivico(rs.getInt("numero_civico"));
+				bean.setNumCivico(rs.getInt("numCivico"));
 				bean.setCap(rs.getInt("cap"));
 				bean.setProvincia(rs.getString("provincia"));
-				bean.setCitta(rs.getString("città"));
+				bean.setCitta(rs.getString("citta"));
 				addresses.add(bean);
 
 			}

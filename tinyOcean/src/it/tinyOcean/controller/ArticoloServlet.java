@@ -49,7 +49,7 @@ public class ArticoloServlet extends HttpServlet {
 					int id = Integer.parseInt(request.getParameter("id"));
 					request.removeAttribute("product");
 					request.setAttribute("product", model.doRetrieveByKey(id));
-					request.getRequestDispatcher("/views/productDetails.jsp").forward(request, response);
+					request.getRequestDispatcher("/productDetails.jsp").forward(request, response);
 
 				} else if (action.equalsIgnoreCase("update")) {
 					int id = Integer.parseInt(request.getParameter("id"));
@@ -165,7 +165,7 @@ public class ArticoloServlet extends HttpServlet {
 			System.out.println("Error:" + e.getMessage());
 		}
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/Homepage.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Homepage.jsp");
 		dispatcher.include(request, response);
 	}
 

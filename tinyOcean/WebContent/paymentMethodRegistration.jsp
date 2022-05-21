@@ -24,7 +24,7 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 			<span id="errorspan"></span>
 		</div>
-		<form action="MetodoPagamentoServlet" id="paymentform">
+		<form action="MetodoPagamento" id="paymentform">
 			<p>Tipo di metodo di pagamento:</p>
 			<label>Carta di credito<input class=paymentMethod type=radio name=tipo value="Carta di credito" required></label>
 			<label>Conto bancario<input class=paymentMethod type=radio name=tipo value="Conto bancario" required></label>

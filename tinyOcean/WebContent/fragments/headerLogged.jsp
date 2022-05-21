@@ -9,7 +9,7 @@
 	<section class="navigation">
 		<div class="nav-container">
 			<div class="brand">
-				<a href="./views/Homepage.jsp">Tiny Ocean</a>
+				<a href="Homepage.jsp">Tiny Ocean</a>
 			</div>
 			
 			<nav>
@@ -26,7 +26,7 @@
 						</ul>
 					</li>
 					<li><a href="./OrdineStoria">Storico ordini</a></li>
-					<li><a href="./cart.jsp">Carrello</a></li>
+					<li><a href="cart.jsp">Carrello</a></li>
 
 					<%
 					if (((UtenteBean) session.getAttribute("currentSessionUser")).isAdmin())

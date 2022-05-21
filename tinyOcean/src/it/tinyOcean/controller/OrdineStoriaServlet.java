@@ -46,7 +46,7 @@ public class OrdineStoriaServlet extends HttpServlet {
 		List<OrdineBean> ordini = new ArrayList<OrdineBean>();
 		ordini = orderDAO.getAllOrdersByUser(user);
 		session.setAttribute("ordini", ordini);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/orderHistory.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/orderHistory.jsp");
 		dispatcher.include(request, response);
 	}
 

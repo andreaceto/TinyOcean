@@ -54,7 +54,7 @@ public class OrdineServlet extends HttpServlet {
 				session.removeAttribute("ordine");
 				session.setAttribute("ordine", order.getOrderById(id));
 				session.setAttribute("products", products);
-				request.getRequestDispatcher("/views/orderDetails.jsp").forward(request, response);
+				request.getRequestDispatcher("/orderDetails.jsp").forward(request, response);
 			}
 		}
 	}

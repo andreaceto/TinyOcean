@@ -49,7 +49,7 @@ public class OrdineArchivioServlet extends HttpServlet {
 		else
 			ordini=orderDAO.getAllOrders();
 		session.setAttribute("ordini", ordini);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/admin/ordini.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/admin/ordini.jsp");
 		dispatcher.include(request, response);
 	}
 
