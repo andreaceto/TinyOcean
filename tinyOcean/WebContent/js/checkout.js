@@ -1,8 +1,5 @@
-/**
- * 
- */
-
 let valid = true;
+
 function validateform() {
 	var address = $("#indirizzo").val();
 	var method = $("#metodoPagamento").val();

@@ -1,5 +1,5 @@
-
 let valid = true;
+
 function validateform() {
 	var username = $("#myform input[name=usr]").val();
 	var nome = $("input[name=nome]").val();
@@ -13,7 +13,7 @@ function validateform() {
 	username_validation(username, 5, 12);
 	name_validation(nome);
 	surname_validation(cognome);
-	ValidateEmail(email);
+	email_validation(email);
 	password_validation(password, 7, 12);
 	num_tel_validation(num_tel);
 	country_validation(paese);
@@ -79,7 +79,7 @@ function surname_validation(surname) {
 
 }
 
-function ValidateEmail(uemail) {
+function email_validation(uemail) {
 	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 	if (uemail.match(mailformat)) {
 		return true;
@@ -188,7 +188,7 @@ $(document).ready(function(event) {
 	})
 
 	$("#myform input[name=usr]").keyup(function(event) {
-		$.post("./validation", { "username": $("#myform input[name=usr]").val() }, function(data) {
+		$.post("./UsernameValidation", { "username": $("#myform input[name=usr]").val() }, function(data) {
 			console.log(data);
 			if (data===true) {
 				$("#myform input[name=usr]").css({
@@ -204,6 +204,27 @@ $(document).ready(function(event) {
 					"border-width": "thick"
 				});
 				console.log("username nuovo");
+			}
+		}, 'JSON');
+	});
+	
+	$("#myform input[name=email]").keyup(function(event) {
+		$.post("./EmailValidation", { "email": $("#myform input[name=email]").val() }, function(data) {
+			console.log(data);
+			if (data===true) {
+				$("#myform input[name=email]").css({
+					"border-color": "red",
+					"border-width": "thick"
+				});
+				console.log("email già utilizzata");
+
+			}
+			else {
+				$("#myform input[name=email]").css({
+					"border-color": "green",
+					"border-width": "thick"
+				});
+				console.log("email non in uso");
 			}
 		}, 'JSON');
 	});

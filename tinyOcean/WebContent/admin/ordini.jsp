@@ -10,6 +10,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Archivio ordini</title>
+	<link href="./style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 		

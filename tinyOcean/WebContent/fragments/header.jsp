@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="https://use.fontawesome.com/747292109b.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link href="./style/headerStyle.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -17,13 +18,7 @@
 					<a id="nav-toggle" href="#!"><span></span></a>
 				</div>
 				<ul class="nav-list">		
-					<li class="nav-right"><a href="#!">Ciao, Accedi</a>
-					<ul class="nav-dropdown">
-							<li><a href="loginPage.jsp">Accedi</a></li>
-							<li><a href="./UserPage">Il mio account</a></li>
-							<li><a href="./OrdineStoria">I miei ordini</a></li>
-					</ul></li>		
-					<li><a href="./OrdineStoria">Storico ordini</a></li>
+					<li class="nav-right"><a href="loginPage.jsp">Ciao, Accedi</a>
 					<li><a href="cart.jsp">Carrello</a></li>
 				</ul>
 			</nav>

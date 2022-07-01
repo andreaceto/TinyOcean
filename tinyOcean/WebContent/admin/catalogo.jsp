@@ -8,6 +8,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Catalogo</title>
+	<link href="./style/style.css" rel="stylesheet" type="text/css">
+	<script src="./js/catalogo.js"></script>
 </head>
 <body>
 	<%

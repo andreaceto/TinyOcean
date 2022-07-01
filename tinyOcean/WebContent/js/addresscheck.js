@@ -1,18 +1,15 @@
-/**
- * 
- */
 let valid = true;
 function validateform() {
 	var via = $("#addressform input[name=via]").val();
-	var numero_civico = $("#addressform input[name=numero_civico]").val();
+	var numCivico = $("#addressform input[name=numCivico]").val();
 	var cap = $("#addressform input[name=cap]").val();
-	var città = $("#addressform input[name=citta ]").val();
 	var provincia = $("#addressform input[name=provincia]").val();
+	var citta = $("#addressform input[name=citta ]").val();
 	street_validation(via);
-	civic_number_validation(numero_civico);
+	civic_number_validation(numCivico);
 	zip_validation(cap);
-	city_validation(città);
 	province_validation(provincia);
+	city_validation(citta);
 	return valid;
 }
 
@@ -36,11 +33,11 @@ function civic_number_validation(civic_number) {
 	if (civic_number.match(match)) {
 		return true;
 	}
-	$("#addressform input[name=numero_civico]").css({
+	$("#addressform input[name=numCivico]").css({
 		"border-color": "red",
 		"border-width": "thick"
 	});
-	$("#addressform input[name=numero_civico]").val("");
+	$("#addressform input[name=numCivico]").val("");
 	$("#addressform input[name=via]").attr("placeholder", "numero civico non valido");
 	valid = false;
 	return false;

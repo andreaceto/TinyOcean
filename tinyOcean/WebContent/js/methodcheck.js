@@ -1,20 +1,14 @@
-/**
- * 
- */
-/**
- * 
- */
-
 let valid = true;
+
 function validateform() {
 	var tipo = $("#paymentform input[name=tipo]:checked").val();
+	var numCarta = $("#paymentform input[name=numCarta]").val();
+	var scadenza = $("input[name=scadenza]").val();
 	var titolare = $("#paymentform input[name=titolare]").val();
-	var numero = $("#paymentform input[name=numero]").val();
-	var data = $("input[name=scadenza]").val();
 	type_validation(tipo);
+	number_validation(numCarta, tipo);
+	data_validation(scadenza);
 	owner_validation(titolare);
-	number_validation(numero, tipo);
-	data_validation(data);
 	return valid;
 }
 
@@ -53,12 +47,12 @@ function number_validation(number, type) {
 		if (number.match(numbers)) {
 			return true;
 		}
-		$("#paymentform input[name=numero]").css({
+		$("#paymentform input[name=numCarta]").css({
 			"border-color": "red",
 			"border-width": "thick"
 		});
-		$("#paymentform input[name=numero]").val("");
-		$("#paymentform input[name=numero]").attr("placeholder", "il numero deve essere composto da 13 o 16 numeri");
+		$("#paymentform input[name=numCarta]").val("");
+		$("#paymentform input[name=numCarta]").attr("placeholder", "il numero deve essere composto da 13 o 16 numeri");
 		valid = false;
 		return false;
 	}
@@ -66,12 +60,12 @@ function number_validation(number, type) {
 		if (number.match(alphanumbers)) {
 			return true;
 		}
-		$("#paymentform input[name=numero]").css({
+		$("#paymentform input[name=numCarta]").css({
 			"border-color": "red",
 			"border-width": "thick"
 		});
-		$("#paymentform input[name=numero]").val("");
-		$("#paymentform input[name=numero]").attr("placeholder", "l'iban deve essere composto da 27 caratteri alfanumerici");
+		$("#paymentform input[name=numCarta]").val("");
+		$("#paymentform input[name=numCarta]").attr("placeholder", "l'IBAN deve essere composto da 27 caratteri alfanumerici");
 		valid = false;
 		return false;
 
@@ -102,11 +96,11 @@ $(document).ready(function(event) {
 		$(":input").removeAttr("style");
 
 		if (validateform()) {
-			console.log("indirizzo valido");
+			console.log("metodo di pagamento valido");
 		}
 		else {
 			valid=true;
-			console.log("indirizzo non valido");
+			console.log("metodo di pagamento non valido");
 			event.preventDefault;
 			event.stopPropagation();
 			return false;

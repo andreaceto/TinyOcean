@@ -1,7 +1,5 @@
-/**
- * 
- */
 let valid = true;
+
 function validateform() {
 	var username = $("#loginform input[name=un]").val();
 	var password = $("#loginform input[name=pw]").val();
@@ -46,19 +44,14 @@ function password_validation(passid, minlenght, maxlenght) {
 
 $(document).ready(function() {
 
-
-
 	$("#loginform button[name=login]").click(function(event) {
-
 		
 		$(":input").removeAttr("style");
 
 		if (validateform()) {
-
 			console.log(" credenziali well-formed");
 		}
 		else {
-		
 			console.log("credenziali non  well-formed");
 			event.preventDefault;
 			event.stopPropagation();
@@ -69,7 +62,6 @@ $(document).ready(function() {
 
 	$(":input").click(function() {
 		this.focus();
-
 	});
 }
 )

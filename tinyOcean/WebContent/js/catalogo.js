@@ -1,52 +1,38 @@
-/**
- * 
- */
 console.log("ready");
 
 $(document).ready(function(event) {
 	console.log("ready");
-	$("input[type=checkbox]").change(function(event) {
-		console.log("ready");
-		$.post("./Visibility", { "id": $(this).val(), "visible": $(this).is(':checked') }, function(data) {
-
-
-		}, 'JSON');
-	});
 
 	$(".btn-det").click(function(event) {
 		var row = $(this).closest('tr');
-		var Newid = row.find('.new').val();
-		var Oldid=row.find('.old').val();
+		var oldID = row.find('.old').val();
+		var newID = row.find('.new').val();
+		var produttore = row.find('.produttore').val();
 		var nome = row.find('.nome').val();
-		var prezzo = row.find('.prezzo').val();
-		var voto = row.find('.voto').val();
-		var quantita = row.find('.quantita').val();
-		var saldo = row.find('.saldo').val();
-		var data = row.find('.data').val();
 		var descrizione = row.find('.descrizione').val();
-		var peso = row.find('.peso').val();
+		var prezzo = row.find('.prezzo').val();
+		var stock = row.find('.stock').val();
+		var altezza = row.find('.altezza').val();
+		var larghezza = row.find('.larghezza').val();
+		var lunghezza = row.find('.lunghezza').val();
+		var saldo = row.find('.saldo').val();
 		
-console.log(Newid);
-console.log(Oldid);
+		console.log(newID);
+		console.log(oldID);
 
-
-		$.post("./CatalogueUpdate", {
-			"Newid": Newid, "nome": nome,
-			"prezzo": prezzo, "voto": voto
-			, "quantita": quantita, "saldo": saldo
-			, "data": data, "descrizione": descrizione,
-			"peso": peso,"Oldid":Oldid
-		}, function(data) {
-
-
-
+		$.post("./CatalogoUpdate", {
+			"newID": newID,
+			"produttore": produttore,
+			"nome": nome,
+			"descrizione": descrizione,
+			"prezzo": prezzo,
+			"stock": stock, 
+			"peso": peso,
+			"altezza": altezza,
+			"larghezza": larghezza,
+			"lunghezza": lunghezza,
+			"saldo": saldo,
+			"Oldid": oldID
 		});
-
-
-
-
 	})
-
-
-}
-)
+})

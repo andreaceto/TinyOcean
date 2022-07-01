@@ -16,9 +16,9 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 <head>
 	<meta charset="UTF-8">
 	<title>Aggiungi metodo di pagamento</title>
-	<script src="./js/methodcheck.js"></script>
 	<link href="./style/style.css" rel="stylesheet" type="text/css">
 	<link href="./style/error.css" rel="stylesheet" type="text/css">
+	<script src="./js/methodcheck.js"></script>
 </head>
 <body>
 	<h2>Compila il form per inserire un nuovo metodo di pagamento</h2>
