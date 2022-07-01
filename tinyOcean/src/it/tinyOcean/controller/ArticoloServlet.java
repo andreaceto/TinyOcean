@@ -2,6 +2,8 @@ package it.tinyOcean.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +12,10 @@ import javax.servlet.http.*;
 
 import it.tinyOcean.model.ArticoloBean;
 import it.tinyOcean.model.ArticoloDAO;
+import it.tinyOcean.model.RecensioneBean;
+import it.tinyOcean.model.RecensioneDAO;
 import it.tinyOcean.model.Cart;
+
 
 /**
  * Servlet implementation class ProductControl
@@ -49,8 +54,24 @@ public class ArticoloServlet extends HttpServlet {
 					int id = Integer.parseInt(request.getParameter("id"));
 					request.removeAttribute("product");
 					request.setAttribute("product", model.doRetrieveByKey(id));
-					request.getRequestDispatcher("/productDetails.jsp").forward(request, response);
+					
+					RecensioneDAO daoRecensioni = new RecensioneDAO();
+					ArrayList<RecensioneBean> elencoRecensioni = new ArrayList<>();
+					ArticoloBean product;
+					try {
+						product = model.doRetrieveByKey(Integer.valueOf(request.getParameter("id")));
+						elencoRecensioni = (ArrayList<RecensioneBean>) daoRecensioni.getRecensioniByProduct(product).stream().limit(5).collect(Collectors.toList());
+						
+						request.setAttribute("votoMedio", RecensioneDAO.getVotoMedio(product));
+						request.setAttribute("recensioni", elencoRecensioni);
 
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					request.getRequestDispatcher("/productDetails.jsp").forward(request, response);
+					
 				} else if (action.equalsIgnoreCase("update")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					ArticoloBean product = new ArticoloBean();

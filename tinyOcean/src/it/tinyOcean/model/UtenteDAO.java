@@ -5,6 +5,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+
 import java.sql.*;
 import java.time.LocalDate;
 
@@ -109,6 +110,30 @@ public class UtenteDAO {
 
 		return bean;
 
+	}
+	
+	public UtenteBean doRetrieveByKey(String username) throws Exception {
+		UtenteBean bean = new UtenteBean();
+		String selectSQL = "SELECT * FROM utente WHERE username = ?";
+
+		try(Connection connection = ds.getConnection()){
+			try(PreparedStatement preparedStatement = connection.prepareStatement(selectSQL)){
+				preparedStatement.setString(1, username);
+				ResultSet rs = preparedStatement.executeQuery();
+				if (rs.next()) {
+					bean.setUsername(rs.getString("username"));
+					bean.setNome(rs.getString("nome"));
+					bean.setCognome(rs.getString("cognome"));
+					bean.setEmail(rs.getString("email"));
+					bean.setPassword(rs.getString("password"));
+					bean.setNumTel(rs.getString("numTelefono"));
+					bean.setPaeseResidenza(rs.getString("paeseResidenza"));
+					bean.setDataNascita(rs.getDate("dataNascita").toLocalDate());
+					bean.setAdmin(rs.getBoolean("admin"));
+				}
+			}
+		}
+		return bean;
 	}
 	
 	public synchronized  void doSave(UtenteBean bean){

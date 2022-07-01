@@ -11,6 +11,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+
 public class ArticoloDAO implements ArticoloModel {
 
 	private static DataSource ds;
@@ -183,7 +184,26 @@ public class ArticoloDAO implements ArticoloModel {
 		}
 		return products;
 	}
+	
+	public static boolean isAcquired(ArticoloBean articolo, UtenteBean user) throws SQLException {
+		String controllaAcquisto = "SELECT * FROM utente U JOIN (SELECT * FROM ordine O JOIN contenuto C ON O.numOrdine=C.ordine WHERE C.articolo = ?) J "+
+				"ON U.username = J.utente WHERE U.username=?";
 
+		try(Connection con = ds.getConnection()){
+			try(PreparedStatement ps = con.prepareStatement(controllaAcquisto)){	
+				ps.setInt(1, articolo.getId());
+				ps.setString(2, user.getUsername());
+
+				ResultSet rs = ps.executeQuery();
+				if(rs.next())
+					return true;
+
+				else 
+					return false;
+			}
+		}
+	}
+	
 	public synchronized void Alter(long id, ArticoloBean product) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
