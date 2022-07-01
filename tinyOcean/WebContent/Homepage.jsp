@@ -33,6 +33,8 @@ if (products == null) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="./style/style.css" rel="stylesheet" type="text/css">
+	<script src="./js/photo.js"></script>
 <title>Tiny Ocean</title>
 </head>
 <body>
@@ -69,6 +71,7 @@ if (products == null) {
 		}
 		%>
 	</div>
+
 </body>
 	<%@ include file="./fragments/footer.jsp"%>
 </html>

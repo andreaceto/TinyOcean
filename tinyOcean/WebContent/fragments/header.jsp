@@ -3,6 +3,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<script src="https://use.fontawesome.com/747292109b.js"></script>
+	<link href="./style/headerStyle.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<section class="navigation">

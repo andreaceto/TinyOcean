@@ -23,6 +23,7 @@ LinkedList<ContenutoBean> products = (LinkedList<ContenutoBean>) session.getAttr
 <head>
 	<meta charset="UTF-8">
 	<title>Dettagli</title>
+	<link href="./style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<h2>Dettagli</h2>

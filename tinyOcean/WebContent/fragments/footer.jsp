@@ -3,6 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<link href="./style/footerStyle.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<footer class="footer-container">

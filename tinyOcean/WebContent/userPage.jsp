@@ -8,6 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>il mio account</title>
+	<link href="./style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<%

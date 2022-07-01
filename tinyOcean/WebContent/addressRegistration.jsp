@@ -16,6 +16,8 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 <head>
 	<meta charset="UTF-8">
 	<title>Aggiungi indirizzo</title>
+	<script src="./js/addresscheck.js"></script>
+	<link href="./style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<h2> Compila il form per inserire un nuovo indirizzo di consegna</h2>

@@ -16,6 +16,9 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 <head>
 	<meta charset="UTF-8">
 	<title>Pagina di registrazione</title>
+	<link href="./style/style.css" rel="stylesheet" type="text/css">
+	<link href="./style/error.css" rel="stylesheet" type="text/css">
+	<script src="./js/registration.js"></script>
 </head>
 <body>
 	<h2>Compila il form per registrarti</h2>

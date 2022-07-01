@@ -19,6 +19,7 @@ if (session == null || session.getAttribute("currentSessionUser") == null) {
 <html>
 <head>
 	<meta charset="UTF-8">
+	<link href="./style/style.css" rel="stylesheet" type="text/css">
 	<title>Carrello</title>
 </head>
 <body>
