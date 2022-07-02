@@ -29,8 +29,7 @@ function street_validation(street) {
 }
 
 function civic_number_validation(civic_number) {
-	var match = /d{1,4}[a-zA-Z]?/
-	if (civic_number.match(match)) {
+	if (civic_number.match(/^[0-9]{1,3}$/)) {
 		return true;
 	}
 	$("#addressform input[name=numCivico]").css({
@@ -38,7 +37,7 @@ function civic_number_validation(civic_number) {
 		"border-width": "thick"
 	});
 	$("#addressform input[name=numCivico]").val("");
-	$("#addressform input[name=via]").attr("placeholder", "numero civico non valido");
+	$("#addressform input[name=numCivico]").attr("placeholder", "numero civico non valido");
 	valid = false;
 	return false;
 }

@@ -17,6 +17,7 @@ import it.tinyOcean.model.*;
 public class IndirizzoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	static IndirizzoDAO IndirizzoDAO = new IndirizzoDAO();
+	static UtenteDAO UtenteDAO = new UtenteDAO();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -39,14 +40,19 @@ public class IndirizzoServlet extends HttpServlet {
 		String citta = request.getParameter("citta");
 		String provincia = request.getParameter("provincia");
 		
-		IndirizzoBean address = new IndirizzoBean();
 		
-		UtenteBean user = (UtenteBean) request.getSession().getAttribute("currentSessionUser");
+		IndirizzoBean address = new IndirizzoBean();
 		address.setVia(via);
 		address.setNumCivico(numCivico);
 		address.setCap(cap);
-		address.setCitta(citta);
 		address.setProvincia(provincia);
+		address.setCitta(citta);
+		
+		UtenteBean user = (UtenteBean) request.getSession().getAttribute("currentSessionUser");
+		if(user == null) {
+			user = UtenteDAO.newGuestUser();
+			request.getSession().setAttribute("currentSessionUser",user);
+		}
 		IndirizzoDAO.doSave(user, address);
 		response.sendRedirect("checkoutPage.jsp");
 

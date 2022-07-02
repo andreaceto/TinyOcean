@@ -13,8 +13,8 @@ import javax.servlet.http.*;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter( urlPatterns={ "/checkoutPage.jsp","/orderHistory.jsp"},
-		servletNames={"/UserPage","/OrdineStoria","/CheckOut"})
+@WebFilter( urlPatterns={ "/orderHistory.jsp"},
+		servletNames={"/UserPage","/OrdineStoria"})
 public class LoginFilter implements Filter {
 	@Override
 	public void init(FilterConfig config) throws ServletException {
@@ -33,7 +33,7 @@ public class LoginFilter implements Filter {
 		if (session == null || session.getAttribute("currentSessionUser") == null) { // change "user" for the session attribute you
 																		// have defined
 
-			response.sendRedirect(request.getContextPath() + "loginPage.jsp?"); // No logged-in user found, so redirect
+			response.sendRedirect(request.getContextPath() + "/loginPage.jsp?"); // No logged-in user found, so redirect
 																				// to login page.
 		} else {
 			chain.doFilter(req, res); // Logged-in user found, so just continue request.

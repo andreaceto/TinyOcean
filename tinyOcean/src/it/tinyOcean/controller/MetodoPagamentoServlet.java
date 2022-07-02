@@ -3,6 +3,8 @@ package it.tinyOcean.controller;
 import java.io.IOException;
 import java.time.LocalDate;
 import it.tinyOcean.model.*;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MetodoPagamentoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	static MetodoPagamentoDAO MetodoPagamentoDAO = new MetodoPagamentoDAO();
+	static UtenteDAO UtenteDAO = new UtenteDAO();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -48,8 +51,13 @@ public class MetodoPagamentoServlet extends HttpServlet {
 		paymentMethod.setIndirizzoFatt(indirizzoFatt);
 		paymentMethod.setPredefinito(predefinito);
 		
-		MetodoPagamentoDAO.doSave(user, paymentMethod);
+		if(user==null) {
+			user = UtenteDAO.newGuestUser();
+			request.getSession().setAttribute("currentSessionUser",user);
+		}
 		
+		MetodoPagamentoDAO.doSave(user, paymentMethod);
+
 		response.sendRedirect("checkoutPage.jsp");
 		}
 

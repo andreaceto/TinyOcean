@@ -73,7 +73,7 @@ public class MetodoPagamentoDAO {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME3
-				+ " (numCarta,tipo,scadenza,titolare,indirizzoFatt,predefinito) VALUES (?,?,?,?,?,?)";
+				+ " (numCarta,tipo,scadenza,titolare,indirizzoFatturazione,predefinito) VALUES (?,?,?,?,?,?)";
 
 		try {
 			connection = ds.getConnection();
@@ -101,7 +101,7 @@ public class MetodoPagamentoDAO {
 					preparedStatement.executeUpdate();
 
 				} catch (Exception e) {
-					System.out.print("could not update table " + TABLE_NAME2 + " to reflect changes");
+					System.out.print("could not update table " + TABLE_NAME2 + " to reflect changes ");
 				}
 
 				finally {
@@ -146,7 +146,7 @@ public class MetodoPagamentoDAO {
 			preparedStatement.executeUpdate();
 
 		} catch (Exception e) {
-			System.out.print("could not update table " + TABLE_NAME2 + " to reflect changes");
+			System.out.print("could not update table " + TABLE_NAME2 + " to reflect changes ");
 			System.out.print(e);
 		}
 		finally {

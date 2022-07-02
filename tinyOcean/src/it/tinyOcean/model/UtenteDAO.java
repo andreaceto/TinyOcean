@@ -8,6 +8,8 @@ import javax.sql.DataSource;
 
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.Random;
+import java.util.UUID;
 
 public class UtenteDAO {
 	private static DataSource ds;
@@ -136,6 +138,61 @@ public class UtenteDAO {
 		return bean;
 	}
 	
+	public  synchronized  boolean checkUser(String username) {
+		
+		PreparedStatement preparedStatement = null;
+
+		String searchQuery = "select * from " + TABLE_NAME + " WHERE username='" + username + "'";
+		
+		Connection connection = null;
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(searchQuery);
+			rs = preparedStatement.executeQuery();
+			boolean more = rs.next();
+			if (!more) {
+				System.out.println("Not registered user!");
+			}
+			else if (more) {
+				return true;
+			}
+
+		}
+
+		catch (Exception ex) {
+			System.out.println("Log In failed: An Exception has occurred! " + ex);
+		}
+
+		// some exception handling
+		finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (Exception e) {
+				}
+				rs = null;
+			}
+
+			if (preparedStatement != null) {
+				try {
+					preparedStatement.close();
+				} catch (Exception e) {
+				}
+				preparedStatement = null;
+			}
+
+			if (connection != null) {
+				try {
+					connection.close();
+				} catch (Exception e) {
+				}
+
+				connection = null;
+			}
+		}
+		return false;
+	}
+	
 	public synchronized  void doSave(UtenteBean bean){
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -176,6 +233,74 @@ public class UtenteDAO {
 			}
 			
 			}
+	}
+	
+	public synchronized  UtenteBean newGuestUser(){
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		
+		String username = UUID.randomUUID().toString().substring(0, 29);
+		while(checkUser(username)) {
+			username = UUID.randomUUID().toString().substring(0, 29);
+		}
+		String firstName = "guest";
+		String lastName = "guest";
+		String email = "guest@guest.com";
+		Long password = Math.abs(new Random().nextLong());
+		String numTel = "3333333333";
+		String paeseResidenza = "Antartica";
+		LocalDate dataNascita = LocalDate.EPOCH;
+		
+		String insertSQL = "INSERT INTO " + TABLE_NAME
+				+ " (username,nome,cognome, email, password,numTelefono,paeseResidenza,dataNascita) VALUES (?,?,?,?,?,?,?,?)";
+		
+		System.out.println("Query: " + insertSQL);
+		try {
+			connection = ds.getConnection();
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setString(1, username);
+			preparedStatement.setString(2, firstName);
+			preparedStatement.setString(3, lastName);
+			preparedStatement.setString(4, email);
+			preparedStatement.setString(5, password.toString());
+			preparedStatement.setString(6, numTel);
+			preparedStatement.setString(7, paeseResidenza);
+			preparedStatement.setDate(8,  Date.valueOf(dataNascita));
+			
+	
+			preparedStatement.executeUpdate();
+	
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			
+				if (connection != null)
+					connection.close();
+			}
+			catch(SQLException e) {
+				System.out.println("Registration failed : An Exception has occurred! " + e);
+			}
+			
+			}
+		
+		UtenteBean guest = new UtenteBean();
+		guest.setUsername(username);
+		guest.setNome(firstName);
+		guest.setCognome(lastName);
+		guest.setEmail(email);
+		guest.setPassword(password.toString());
+		guest.setNumTel(numTel);
+		guest.setPaeseResidenza(paeseResidenza);
+		guest.setDataNascita(dataNascita);
+		guest.setValid(false);
+		guest.setAdmin(false);
+		
+		return guest;
 	}
 	
 	public synchronized void Alter(String username, UtenteBean user) {

@@ -22,10 +22,10 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 <body>
 	<h2> Compila il form per inserire un nuovo indirizzo di consegna</h2>
 	<div class=register>
-		<form action="IndirizzoServlet" id="addressform">
+		<form action="Indirizzo" id="addressform">
 			<label>Via<input class=address type=text name=via  placeholder="Via Armando Diaz" required></label>
 			<br>
-			<label>Numero Civico<input class=address type=number name=numCivico placeholder="15" required></label>
+			<label>Numero Civico<input class=address type=text name=numCivico placeholder="15" required></label>
 			<br>
 			<label>Cap<input class=address type=number name=cap placeholder="84018" required></label>
 			<br>

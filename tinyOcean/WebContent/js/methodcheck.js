@@ -26,7 +26,7 @@ function type_validation(type) {
 }
 
 function owner_validation(owner) {
-	var match = /^[A-Za-z]+$/
+	var match = /(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})$/;
 	if (owner.match(match)) {
 		return true;
 	}

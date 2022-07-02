@@ -13,9 +13,14 @@
 	text-align: left;
 	font: bold 16px sans-serif;
 	position: absolute;
-	margin: 100% 0px 0px 0px;
+	margin: 30px 0px 0px 0px;
 	display: flex;
     justify-content: space-around;
+    padding: 70px;
+}
+
+.text-primary {
+  color: #ff8000!important;
 }
 
 .footer-container .footer-left, .footer-container .footer-center,
@@ -38,20 +43,27 @@
 
 .footer-container h3 {
 	color: #ffffff;
-	font: normal 36px 'Open Sans', cursive;
+	font: normal 60px 'Open Sans', cursive;
 	margin: 0;
 }
 
 .footer-container h3 span {
 	color: #ffffff;
 }
-
 /* Footer links */
 
 .footer-container .footer-links {
 	color: #ffffff;
 	margin: 20px 0 12px;
 	padding: 0;
+}
+
+.footer-container .footer-center .footer-links span{
+	display: block;
+	color: #ff8000;
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 20px;
 }
 
 .footer-container .footer-links a {
@@ -63,10 +75,10 @@
 }
 
 .footer-container .footer-company-name {
-	color: #222;
+	color: #92999f;
 	font-size: 14px;
 	font-weight: normal;
-	margin: 0;
+	margin: 30px 0 0 0;
 }
 
 /* Footer Center */
@@ -99,6 +111,10 @@
 	font-weight: 400;
 	vertical-align: middle;
 	margin: 0;
+}
+
+.footer-container .footer-center .footer-information p{
+	color: #ffffff;
 }
 
 .footer-container .footer-center p span {
@@ -136,15 +152,15 @@
 .footer-container .footer-company-about {
 	line-height: 20px;
 	color: #92999f;
-	font-size: 13px;
+	font-size: 15px;
 	font-weight: normal;
 	margin-top: 10px;
 }
 
-.footer-container .footer-company-about span {
+.footer-container .footer-right .footer-company-about span {
 	display: block;
-	color: #ffffff;
-	font-size: 14px;
+	color: #ff8000;
+	font-size: 25px;
 	font-weight: bold;
 	margin-bottom: 20px;
 }

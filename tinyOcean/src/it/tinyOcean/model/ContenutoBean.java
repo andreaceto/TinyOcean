@@ -30,5 +30,7 @@ public class ContenutoBean {
 	public void setQuantita(int quantita) {
 		this.quantita = quantita;
 	}
-
+	public double getImponibile() {
+		return this.prezzoAcq / ((100+this.iva)/100);
+	}
 }
