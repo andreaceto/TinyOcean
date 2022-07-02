@@ -20,7 +20,7 @@
 }
 
 .text-primary {
-  color: #ff8000!important;
+  color: #0c3a4d!important;
 }
 
 .footer-container .footer-left, .footer-container .footer-center,
@@ -60,7 +60,7 @@
 
 .footer-container .footer-center .footer-links span{
 	display: block;
-	color: #ff8000;
+	color: #0c3a4d;
 	font-size: 25px;
 	font-weight: bold;
 	margin-bottom: 20px;
@@ -159,7 +159,7 @@
 
 .footer-container .footer-right .footer-company-about span {
 	display: block;
-	color: #ff8000;
+	color: #0c3a4d;
 	font-size: 25px;
 	font-weight: bold;
 	margin-bottom: 20px;
