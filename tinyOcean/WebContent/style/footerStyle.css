@@ -13,22 +13,14 @@
 	text-align: left;
 	font: bold 16px sans-serif;
 	position: absolute;
-<<<<<<< HEAD
-	margin: 30px 0px 0px 0px;
-=======
 	margin: 200px 0px 20px 0px;
->>>>>>> branch 'main' of https://github.com/andreaceto/TinyOcean
 	display: flex;
     justify-content: space-around;
     padding: 70px;
 }
 
 .text-primary {
-<<<<<<< HEAD
-  color: #ff8000!important;
-=======
   color: #0c3a4d!important;
->>>>>>> branch 'main' of https://github.com/andreaceto/TinyOcean
 }
 
 .footer-container .footer-left, .footer-container .footer-center,
@@ -68,11 +60,7 @@
 
 .footer-container .footer-center .footer-links span{
 	display: block;
-<<<<<<< HEAD
-	color: #ff8000;
-=======
 	color: #0c3a4d;
->>>>>>> branch 'main' of https://github.com/andreaceto/TinyOcean
 	font-size: 25px;
 	font-weight: bold;
 	margin-bottom: 20px;
@@ -171,11 +159,7 @@
 
 .footer-container .footer-right .footer-company-about span {
 	display: block;
-<<<<<<< HEAD
-	color: #ff8000;
-=======
 	color: #0c3a4d;
->>>>>>> branch 'main' of https://github.com/andreaceto/TinyOcean
 	font-size: 25px;
 	font-weight: bold;
 	margin-bottom: 20px;
