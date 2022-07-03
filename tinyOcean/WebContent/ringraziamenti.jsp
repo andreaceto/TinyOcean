@@ -6,16 +6,27 @@
         <title>Grazie</title>
         <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">
         <link  rel="stylesheet" href="./style/ringraziamenti.css">
+        <style>
+        
+        body{
+          background-image: url("img/ring3.webp");
+          background-size: 100%;
+          opacity: 80%;
+          color: black;
+          width:100%;
+          height:100%;
+        }
+        </style>
     </head>
     <body>
         <div class=content>
             <div class="wrapper-1">
               <div class="wrapper-2">
-                <h1>Grazie per aver scelto TinyOcean!</h1>
+                <h2>Grazie per aver scelto TinyOcean!</h2>
                 <p>Grazie per averci scelto!</p>
                 <p>Speriamo di rivederti presto.</p>
                 <button class="go-home">
-                 <a href="Homepage.jsp" style="text-decoration: none; color: white;">Ritorna alla home</a>
+                 <a href="Homepage.jsp" style="text-decoration: none; color:black;">Ritorna alla home</a>
                 </button>
               </div>
               
