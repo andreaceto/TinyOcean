@@ -22,6 +22,10 @@
   color: #866c35!important;
 }
 
+.text-secondary {
+  color: #0c3a4d!important;
+}
+
 .footer-container .footer-left, .footer-container .footer-center,
 	.footer-container .footer-right {
 	display: inline-block;

@@ -59,7 +59,7 @@ if (products == null) {
       <input type="radio" name="radio-buttons" id="img-2" />
       <li class="slide-container">
         <div class="slide-image">
-          <img src="img/foto2.jpeg">
+          <img src="img/ring5.jpeg">
         </div>
         <div class="carousel-controls">
           <label for="img-1" class="prev-slide">
@@ -93,7 +93,6 @@ if (products == null) {
   </div>
 </div>
 	
-	<h2>Prodotti</h2>
 	<br>
 	<div class="grid-container">
 		<%

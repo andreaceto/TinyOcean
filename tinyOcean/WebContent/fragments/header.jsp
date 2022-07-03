@@ -12,7 +12,7 @@
 		<div class="nav-container">
 
 			<div class="brand">
-				<a href="#"><span class="text-primary">T</span>iny<span class="text-primary">O</span>cean</a>
+				<a href="#"><span class="text-primary">T</span>iny<span class="text-secondary">O</span>cean</a>
 
 			</div>
 			<nav>

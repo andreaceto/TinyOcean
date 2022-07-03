@@ -9,7 +9,7 @@
 	<footer class="footer-container">
 	
 		<div class="footer-left">
-			<h3><span class="text-primary">T</span>iny<span class="text-primary">O</span>cean</h3>
+			<h3><span class="text-primary">T</span>iny<span class="text-secondary">O</span>cean</h3>
 			<p class="footer-links">
 				<a href="Homepage.jsp" class="link-1">Home</a>
 				<a href="#">Contatti</a>
