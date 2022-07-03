@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <% 
-if (session == null || session.getAttribute("currentSessionUser") == null){ 
+if (session == null || session.getAttribute("currentSessionUser") == null || ((UtenteBean) session.getAttribute("currentSessionUser")).getNome() == "guest"){ 
 %>
 	<%@include file="./fragments/header.jsp"%>
 <% 
@@ -10,7 +10,7 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 	<%@ include file="./fragments/headerLogged.jsp"%>
 <% 
 } 
-%>
+%>%>
 <!DOCTYPE html>
 <html>
 <head>

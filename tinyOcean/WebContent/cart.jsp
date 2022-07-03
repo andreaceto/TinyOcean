@@ -2,19 +2,17 @@
 <%@page import="java.util.*"%>
 <%@page import="it.tinyOcean.model.*"%>
 
-<%
-if (session == null || session.getAttribute("currentSessionUser") == null) {
+<% 
+if (session == null || session.getAttribute("currentSessionUser") == null || ((UtenteBean) session.getAttribute("currentSessionUser")).getNome() == "guest"){ 
 %>
-<%@ include file="./fragments/header.jsp"%>
-
-<%
-} else {
+	<%@include file="./fragments/header.jsp"%>
+<% 
+} else{ 
 %>
-<%@ include file="./fragments/headerLogged.jsp"%>
-<%
-}
+	<%@ include file="./fragments/headerLogged.jsp"%>
+<% 
+} 
 %>
-
 <!DOCTYPE html>
 <html>
 <head>

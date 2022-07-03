@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.tinyOcean.model.ArticoloBean, it.tinyOcean.model.RecensioneBean"%>
+
 <% 
-if (session == null || session.getAttribute("currentSessionUser") == null){ 
+if (session == null || session.getAttribute("currentSessionUser") == null || ((UtenteBean) session.getAttribute("currentSessionUser")).getNome() == "guest"){ 
 %>
 	<%@include file="./fragments/header.jsp"%>
 <% 

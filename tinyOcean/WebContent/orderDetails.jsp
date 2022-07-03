@@ -3,7 +3,7 @@
 <%@page import="java.util.*"%>
 
 <% 
-if (session == null || session.getAttribute("currentSessionUser") == null){ 
+if (session == null || session.getAttribute("currentSessionUser") == null || ((UtenteBean) session.getAttribute("currentSessionUser")).getNome() == "guest"){ 
 %>
 	<%@include file="./fragments/header.jsp"%>
 <% 
