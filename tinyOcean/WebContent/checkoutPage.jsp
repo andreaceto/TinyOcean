@@ -67,12 +67,9 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 									<option value="<%=indirizzo%>"><%=indirizzo%></option>
 							<%
 								}
-							} else {
-							%>
-								<option>Nessun indirizzo in archivio</option>									
-							<%
 							}
 							%>
+							
 						</select>
 						<br>
 						<div class="user-link">
@@ -99,10 +96,6 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 									<option value="<%=metodoPagamento%>"><%=metodoPagamento%></option>
 							<%
 								}
-							} else {
-							%>
-								<option>Nessun metodo di pagamento registrato</option>
-							<%
 							}
 							%>
 						</select>
@@ -156,7 +149,7 @@ if (session == null || session.getAttribute("currentSessionUser") == null){
 	<form>
 		<input type=hidden name=action value=CompletaOrdine>
 		<div class=wrapper>
-			<button class=btn type="submit" formaction="Ordine">Concludi ordine</button>
+			<button id="concludi" class=btn type="submit" formaction="Ordine">Concludi ordine</button>
 		</div>
 	</form>
 	<%

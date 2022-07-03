@@ -45,12 +45,16 @@ function method_validation(method) {
 
 
 $(document).ready(function(event) {
-
-
+	
+	if(!$("#indirizzo").val() && !$("#metodoPagamento").val()){
+		document.getElementById('concludi').disabled = true;
+	}
+	
+	
 	$("button").click(function(event) {
 
 
-$('#errorspan').text("");
+		$('#errorspan').text("");
 
 		if (validateform()) {
 
@@ -59,7 +63,7 @@ $('#errorspan').text("");
 		}
 		else {
 
-		 valid=true;
+			valid=true;
 			event.preventDefault;
 			event.stopPropagation();
 			return false;
