@@ -45,7 +45,7 @@ if (products == null) {
       <input type="radio" name="radio-buttons" id="img-1" checked />
       <li class="slide-container">
         <div class="slide-image">
-          <img src="img/foto4.webp">
+          <img src="img/foto1.webp">
         </div>
         <div class="carousel-controls">
           <label for="img-3" class="prev-slide">
@@ -59,7 +59,7 @@ if (products == null) {
       <input type="radio" name="radio-buttons" id="img-2" />
       <li class="slide-container">
         <div class="slide-image">
-          <img src="img/foto1.webp">
+          <img src="img/foto2.jpeg">
         </div>
         <div class="carousel-controls">
           <label for="img-1" class="prev-slide">
@@ -73,7 +73,7 @@ if (products == null) {
       <input type="radio" name="radio-buttons" id="img-3" />
       <li class="slide-container">
         <div class="slide-image">
-          <img src="img/foto2.jpeg">
+          <img src="img/ring3.webp">
         </div>
         <div class="carousel-controls">
           <label for="img-2" class="prev-slide">
