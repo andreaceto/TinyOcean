@@ -9,9 +9,29 @@ body {
 	margin: 0px;
 }
 
+
+        #logo {
+            text-align: center;
+            background-color: white;
+        }
+
+        #logo-img {
+            width: 100px;
+            height: 100px;
+            padding-bottom: 30px;
+        }
+
 .navigation {
   height: 70px;
   background: black;
+}
+
+.text-primary {
+  color: #0c3a4d!important;
+}
+
+.nav-container .nav-links a{
+	font-size: 40px;
 }
 
 .brand {
@@ -20,7 +40,7 @@ body {
   padding-right: 20px;
   float: left;
   line-height: 70px;
-  font-size: 1.4em;
+  font-size: 2.8em;
 }
 .brand a,
 .brand a:visited {
@@ -45,6 +65,7 @@ nav ul {
 nav ul li {
   float: left;
   position: relative;
+  font-size: 20px;
 }
 nav ul li a,
 nav ul li a:visited {
@@ -57,7 +78,7 @@ nav ul li a:visited {
 }
 nav ul li a:hover,
 nav ul li a:visited:hover {
-  background: #a992d3;
+  background: #0c3a4d;
   color: #ffffff;
 }
 nav ul li a:not(:only-child):after,

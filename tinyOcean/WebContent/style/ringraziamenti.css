@@ -1,19 +1,15 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
 @charset "ISO-8859-1";
 
+
 @font-face {
-  font-family: "archia-regular";
-  src: url("https://dafonttop.com/wp-data/a/21/8021/file/Archia-Regular.otf")
-      format("woff"),
-    url("https://dafonttop.com/wp-data/a/21/8021/file/Archia-Regular.otf")
-      format("opentype"),
-    url("https://dafonttop.com/wp-data/a/21/8021/file/Archia-Regular.otf")
-      format("truetype");
+  font-family: "Open Sans";
 }
 
 @font-face {
-  font-family: 'intro_script_demomedium';
-  src: url('./font/introscriptdemo-medium.woff2') format('woff2');
-  src: url('./font/introscriptdemo-medium.woff') format('woff');
+  font-family: 'Open Sans';
 }
 
 
@@ -47,7 +43,7 @@
   }
   
   h1{
-    font-family: 'intro_script_demomedium';
+    font-family: Open Sans;
     font-size:3rem;
     letter-spacing:3px;
     color:#2f2f2f;
@@ -58,7 +54,7 @@
     margin:0;
     font-size:1.3em;
     color:#aaa;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: Open Sans;
     letter-spacing:1px;
   }
   .go-home{

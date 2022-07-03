@@ -10,8 +10,9 @@
 <body>
 	<section class="navigation">
 		<div class="nav-container">
+
 			<div class="brand">
-				<a href="Homepage.jsp">Tiny Ocean</a>
+				<a href="#"><span class="text-primary">T</span>iny<span class="text-primary">O</span>cean</a>
 
 			</div>
 			<nav>
@@ -19,8 +20,9 @@
 					<a id="nav-toggle" href="#!"><span></span></a>
 				</div>
 				<ul class="nav-list">		
-					<li class="nav-right"><a href="loginPage.jsp">Ciao, Accedi</a>
+					<li class="nav-right"><a href="loginPage.jsp">Login</a>
 					<li><a href="cart.jsp">Carrello</a></li>
+					<li><a href="Homepage.jsp">Home</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -53,3 +55,5 @@
 
 </body>
 </html>
+
+
