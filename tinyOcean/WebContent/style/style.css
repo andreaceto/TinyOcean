@@ -640,3 +640,30 @@ input#img-6:checked ~ .carousel-dots label#img-dot-6 {
 
 input:checked + .slide-container .nav label { display: block; }
 
+
+.centered {
+ 
+ transform: translate(-50%, -50%);
+ color:white;
+
+  font-size: 3vmax;
+  margin: 40px;
+  
+  position: absolute;
+  bottom: 15%;
+  left: 30%;
+  font-family: 'Abril Fatface', 
+  line-height: 10%;
+ 
+}
+p{
+	
+    margin:20px;
+    font-size:2vmax;
+    color:white;
+   font-family: 'Abril Fatface';
+    letter-spacing:2px;
+ 
+  border-top:2px solid white;padding:5px; 
+
+

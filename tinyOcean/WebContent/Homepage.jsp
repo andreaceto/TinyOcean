@@ -46,6 +46,8 @@ if (products == null) {
       <li class="slide-container">
         <div class="slide-image">
           <img src="img/foto1.webp">
+           <div class="centered"style="background-color:black;opacity:70%">REALIZZA IL TUO ACQUARIO<p style="background-color:black;opacity:70%">Scegli e acquista il miglior acquario che fa per te</p></div>
+
         </div>
         <div class="carousel-controls">
           <label for="img-3" class="prev-slide">
@@ -60,6 +62,8 @@ if (products == null) {
       <li class="slide-container">
         <div class="slide-image">
           <img src="img/ring5.jpeg">
+           <div class="centered"style="background-color:black;opacity:70%">ALLESTISCI IL TUO ACQUARIO<p style="background-color:black;opacity:70%">Componi la vasca con legni, rocce e piante acquatiche</p>
+           </div>
         </div>
         <div class="carousel-controls">
           <label for="img-1" class="prev-slide">
@@ -74,6 +78,7 @@ if (products == null) {
       <li class="slide-container">
         <div class="slide-image">
           <img src="img/ring3.webp">
+           <div class="centered"style="background-color:black;opacity:70%">CURA IL TUO ACQUARIO<p style="background-color:black;opacity:70%">Scegli i prodotti ideali per la cura e la manutenzione del tuo acquario</p></div>
         </div>
         <div class="carousel-controls">
           <label for="img-2" class="prev-slide">
@@ -135,4 +140,7 @@ if (products == null) {
 </body>
 	<%@ include file="./fragments/footer.jsp"%>
 </html>
+
+
+  }
 
