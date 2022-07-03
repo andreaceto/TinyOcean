@@ -1,19 +1,15 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
 @charset "ISO-8859-1";
 
+
 @font-face {
-  font-family: "archia-regular";
-  src: url("https://dafonttop.com/wp-data/a/21/8021/file/Archia-Regular.otf")
-      format("woff"),
-    url("https://dafonttop.com/wp-data/a/21/8021/file/Archia-Regular.otf")
-      format("opentype"),
-    url("https://dafonttop.com/wp-data/a/21/8021/file/Archia-Regular.otf")
-      format("truetype");
+  font-family: "Open Sans";
 }
 
 @font-face {
-  font-family: 'intro_script_demomedium';
-  src: url('./font/introscriptdemo-medium.woff2') format('woff2');
-  src: url('./font/introscriptdemo-medium.woff') format('woff');
+  font-family: 'Open Sans';
 }
 
 
@@ -23,13 +19,14 @@
    /* outline:1px solid ;*/
   }
 
+
+
   body{
-  background: #fcefd4;
+	  background-image: url("img/ring2.jpeg");
+	  background-color: #cccccc;
+	  background-repeat: no-repeat, repeat;
       height: 100%;
-          margin: 0;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-    
+      margin: 0;
   }
   
   .wrapper-1{
@@ -38,33 +35,37 @@
     display: flex;
   flex-direction: column;
   border-radius: 50px;
+  align: center;
   }
+  
   .wrapper-2{
+    align: center;
     padding :30px;
     text-align:center;
-    background-color: white;
+    background-color: black;
     border-radius: 50px;
   }
   
-  h1{
-    font-family: 'intro_script_demomedium';
+  h2{
+    font-family: Open Sans;
     font-size:3rem;
     letter-spacing:3px;
-    color:#2f2f2f;
+    color:#ffffff;
     margin:0;
     margin-bottom:20px;
   }
   .wrapper-2 p{
     margin:0;
-    font-size:1.3em;
+    font-size:1.5em;
     color:#aaa;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: Open Sans;
     letter-spacing:1px;
   }
   .go-home{
     color:#fff;
     background:#acd872;
     border:none;
+    font-size:1.3em;
     padding:10px 50px;
     margin:30px 0;
     border-radius:30px;

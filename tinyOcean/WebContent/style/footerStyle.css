@@ -14,12 +14,15 @@
 	font: bold 16px sans-serif;
 	position: absolute;
 	margin: 200px 0px 20px 0px;
-	display: flex;
     justify-content: space-around;
     padding: 70px;
 }
 
 .text-primary {
+  color: #866c35!important;
+}
+
+.text-secondary {
   color: #0c3a4d!important;
 }
 
