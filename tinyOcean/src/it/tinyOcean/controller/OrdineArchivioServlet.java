@@ -45,7 +45,7 @@ public class OrdineArchivioServlet extends HttpServlet {
 			ordini = orderDAO.getAllOrders(LocalDate.parse(request.getParameter("startdate")),
 					LocalDate.parse(request.getParameter("enddate")));
 		else if(request.getParameter("username")!= null)
-			ordini = orderDAO.getAllOrders(request.getParameter("username"));
+			ordini = orderDAO.getAllOrdersByUsername(request.getParameter("username"));
 		else
 			ordini=orderDAO.getAllOrders();
 		session.setAttribute("ordini", ordini);

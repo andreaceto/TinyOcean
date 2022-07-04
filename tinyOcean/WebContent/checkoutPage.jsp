@@ -59,12 +59,12 @@ if (session == null || session.getAttribute("currentSessionUser") == null || ((U
 				<li>
 					<div class="user-payment">
 						<h3>Indirizzo di consegna</h3>
-						<select id="indirizzo" name="indirizzo" class=select-large>
+						<select id="indirizzo" class=select-large>
 							<%
 							if (!indirizzi.isEmpty() ) {
 								for (String indirizzo : indirizzi) {
 									%>
-									<option value="<%=indirizzo%>"><%=indirizzo%></option>
+									<option name="indirizzo" value="<%=indirizzo%>"><%=indirizzo%></option>
 							<%
 								}
 							}

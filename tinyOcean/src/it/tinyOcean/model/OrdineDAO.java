@@ -156,11 +156,11 @@ public class OrdineDAO {
 
 	}
 
-	public synchronized List<OrdineBean> getAllOrdersByUser(UtenteBean user) {
+	public synchronized LinkedList<OrdineBean> getAllOrdersByUser(UtenteBean user) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		List<OrdineBean> orders = new LinkedList<OrdineBean>();
+		LinkedList<OrdineBean> orders = new LinkedList<OrdineBean>();
 
 		String selectSQL = "SELECT * FROM " + TABLE_NAME + " WHERE utente = ? ";
 
@@ -299,7 +299,7 @@ public class OrdineDAO {
 		LinkedList<ContenutoBean> products = new LinkedList<ContenutoBean>();
 
 		String selectSQL = "SELECT nomeArticolo, prezzoAcquisto, iva, quantita FROM "
-							+ TABLE_NAME2 +" WHERE numOrdine = ?";
+							+ TABLE_NAME2 +" WHERE ordine = ?";
 
 		try {
 			connection = ds.getConnection();
@@ -339,11 +339,11 @@ public class OrdineDAO {
 		return products;
 	}
 
-	public List<OrdineBean> getAllOrders(String username) {
+	public LinkedList<OrdineBean> getAllOrdersByUsername(String username) {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 
-		List<OrdineBean> orders = new LinkedList<OrdineBean>();
+		LinkedList<OrdineBean> orders = new LinkedList<OrdineBean>();
 
 		String selectSQL = "SELECT * FROM " + TABLE_NAME + " WHERE utente = ?";
 

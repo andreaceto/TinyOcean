@@ -127,7 +127,7 @@ nav input[type=search] {
 .nav-dropdown {
   position: absolute;
   display: none;
-  z-index: 1;
+  z-index: 3;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 

@@ -31,6 +31,6 @@ public class ContenutoBean {
 		this.quantita = quantita;
 	}
 	public double getImponibile() {
-		return this.prezzoAcq / ((100+this.iva)/100);
+		return Math.round(((this.prezzoAcq / 1.22)*this.quantita) *100 ) / 100;
 	}
 }

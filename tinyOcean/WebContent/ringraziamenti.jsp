@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+
+
 <!DOCTYPE html>
 <html>
     <head>
+    
         <title>Grazie</title>
         <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">
         <link  rel="stylesheet" href="./style/ringraziamenti.css">
@@ -28,13 +31,13 @@
                 <button class="go-home">
                  <a href="Homepage.jsp" style="text-decoration: none; color:black;">Ritorna alla home</a>
                 </button>
+                <button class="go-home">
+                 <a href="Fattura" style="text-decoration: none; color:black;">Scarica fattura</a>
+                </button>
               </div>
               
+          	</div>
           </div>
-          </div>
-          
-          
-          
-    </body>
 
+    </body>
     </html>
