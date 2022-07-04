@@ -49,7 +49,7 @@ if (products == null) {
       <li class="slide-container">
         <div class="mySlides fade">
           <img src="img/foto1.webp" style="width:100%">
-           <div class="centered"style="background-color:black;opacity:70%">REALIZZA IL TUO ACQUARIO<p style="background-color:black;opacity:70%">Scegli e acquista il miglior acquario che fa per te</p></div>
+           <div class="centered"style="background-color:black;opacity:70%">REALIZZA IL TUO ACQUARIO<p>Scegli e acquista il miglior acquario che fa per te</p></div>
 
         </div>
         <div class="carousel-controls">

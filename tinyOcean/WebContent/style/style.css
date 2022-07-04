@@ -624,30 +624,36 @@ input#img-6:checked ~ .carousel-dots label#img-dot-6 {
 input:checked + .slide-container .nav label { display: block; }
 
 
+@media only screen and (max-width: 1050px) {
+  .centered{display: none;}
+}
+
+
 .centered {
- 
   transform: translate(-50%, -50%);
   color:white;
   font-size: 3vmax;
   margin: 40px;
   position: absolute;
-  bottom: 15%;
+  letter-spacing:2px;
+  top: 60%;
   left: 30%;
-  font-family: 'Abril Fatface';
-  line-height: 10%;
+  font-family: 'Open Sans';
+  line-height: normal;
+  padding: 30px;
  
 }
+
 .centered p{
-	
+	border-top:2px solid white;
     margin:20px;
-    font-size:2vmax;
+    font-size:2.5vmax;
     color:white;
    	font-family: 'Abril Fatface';
     letter-spacing:2px;
- 	border-top:2px solid white;
-  	padding:5px; 
+  	padding:30px; 
+  	line-height: normal; 	
 }
-
 
 .fade {
   animation-name: fade;
