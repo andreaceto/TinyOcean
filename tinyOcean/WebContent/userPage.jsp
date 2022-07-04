@@ -18,50 +18,45 @@
 	%>
 	<br>
 
-	<div class="user-container">
+	<div class="user">
 		<form action="UserUpdate">
-			<ul>
-				<li>
-					<div class="user">
-						<h3>I miei dati</h3>
-						<div class="user-label">Nome:</div>
-							<input class="user" name=nome type="text" value=<%=user.getNome()%>>
-					</div>
-				</li>
-				<li>
-					<div class="user">
-						<div class="user-label">Cognome:</div>
+					
+						<h2>I miei dati</h2>
+						
+						
+					<label>Nome:
+				<input class="user" name=nome type="text" value=<%=user.getNome()%>>
+			</label>
+			<br>
+						<label>Cognome:
 						<input class="user" name=cognome type="text" value=<%=user.getCognome()%>>
-					</div>
-				</li>
-				<li>
-					<div class="user">
-						<div class="user-label">Email:</div>
+						</label>
+						<br>
+				
+						<label>Email:
 						<input class="user" name=email  type="email" value=<%=user.getEmail()%>>
-					</div>
-				</li>
-				<li>
-					<div class="user">
-						<div class="user-label">Data di nascita:</div>
+						</label>
+						<br>
+
+					
+						<label>Data di nascita:
 						<input class="user" name=data type="date" value=<%=user.getDataNascita()%>>
-					</div>
-				</li>
-				<li>
-					<div class="user">
+						</label>
+						<br>
+
+					
 						<div class="user-label"></div>
 						<input type="hidden" name=action value=update>
-						<input type="submit" value=Salva>
-					</div>
-				</li>
-			</ul>
+						<input class=btn type="submit" value=Salva>
+					
 		</form>
 	</div>	
 	<br>
-	<div class="user-container">
+	<div class="user">
 		<ul>
 			<li>
 				<div class="user-payment">
-				<h3>I miei indirizzi </h3>
+				<h2>I miei indirizzi </h2>
 				<select id="indirizzo" name="indirizzo" class=select-large>
 				<%
 				if (indirizzi != null) {
@@ -79,7 +74,10 @@
 				</select>
 				<br>
 				<div class="user-link">
-					<a href="addressRegistration.jsp">Inserisci un nuovo indirizzo</a>
+					
+				<button class="btn">
+                 <a href="addressRegistration.jsp" style="text-decoration: none; color:white;">Inserisci un nuovo indirizzo</a>
+                </button>
 				</div>
 				<br>
 				</div>
@@ -87,11 +85,13 @@
 		</ul>
 	</div>
 	<br>
-	<div class="user-container">
+	<div class="user">
 		<ul>
 			<li>
 				<div class="user-payment">
-					<h3>I miei metodi di pagamento</h3>
+				
+					<h2>I miei metodi di pagamento</h2>
+	
 					<select id="metodoPagamento" name="pagamento" class=select-large>
 					<%
 					if (metodiPagamento != null) {
@@ -109,7 +109,9 @@
 					</select>
 					<br>
 					<div class="user-link">
-						<a href="paymentMethodRegistration.jsp">Inserisci un nuovo metodo di pagamento</a>
+				<button class="btn">
+                 <a href="paymentMethodRegistration.jsp" style="text-decoration: none; color:white;">Inserisci un nuovo metodo di pagamento</a>
+                </button>
 					</div>
 					<br>
 				</div>

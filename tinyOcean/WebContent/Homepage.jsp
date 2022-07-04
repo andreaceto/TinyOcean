@@ -40,12 +40,15 @@ if (products == null) {
 </head>
 <body>
 	
-  <div class="carousel">
+    <div class="carousel">
     <ul class="slides">
-      <input type="radio" name="radio-buttons" id="img-1" checked />
+    
+
+  
+      <input type="checkbox" name="radio-buttons" id="img-1" checked />
       <li class="slide-container">
-        <div class="slide-image">
-          <img src="img/foto1.webp">
+        <div class="mySlides fade">
+          <img src="img/foto1.webp" style="width:100%">
            <div class="centered"style="background-color:black;opacity:70%">REALIZZA IL TUO ACQUARIO<p style="background-color:black;opacity:70%">Scegli e acquista il miglior acquario che fa per te</p></div>
 
         </div>
@@ -58,10 +61,13 @@ if (products == null) {
           </label>
         </div>
       </li>
-      <input type="radio" name="radio-buttons" id="img-2" />
+      
+      
+     
+      <input type="checkbox" name="radio-buttons" id="img-2" checked/>
       <li class="slide-container">
-        <div class="slide-image">
-          <img src="img/ring5.jpeg">
+        <div class="mySlides fade">
+          <img src="img/ring5.jpeg" style="width:100%">
            <div class="centered"style="background-color:black;opacity:70%">ALLESTISCI IL TUO ACQUARIO<p style="background-color:black;opacity:70%">Componi la vasca con legni, rocce e piante acquatiche</p>
            </div>
         </div>
@@ -74,10 +80,13 @@ if (products == null) {
           </label>
         </div>
       </li>
-      <input type="radio" name="radio-buttons" id="img-3" />
+     
+      
+
+      <input type="checkbox" name="radio-buttons" id="img-3" checked/>
       <li class="slide-container">
-        <div class="slide-image">
-          <img src="img/ring3.webp">
+        <div class="mySlides fade">
+          <img src="img/ring3.webp" style="width:100%">
            <div class="centered"style="background-color:black;opacity:70%">CURA IL TUO ACQUARIO<p style="background-color:black;opacity:70%">Scegli i prodotti ideali per la cura e la manutenzione del tuo acquario</p></div>
         </div>
         <div class="carousel-controls">
@@ -89,14 +98,20 @@ if (products == null) {
           </label>
         </div>
       </li>
-      <div class="carousel-dots">
-        <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-        <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-        <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
-      </div>
+      
+      
     </ul>
+    
   </div>
+  
+        <div style="text-align:center">
+  			<span class="dot"></span> 
+  			<span class="dot"></span> 
+  			<span class="dot"></span> 
 </div>
+
+</div>
+	
 	
 	<br>
 	<div class="grid-container">
@@ -135,11 +150,30 @@ if (products == null) {
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2938.959488196516!2d14.79335890661423!3d40.771155797250074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133bc5a83bd547bb%3A0xd5ead49bc28f1e2e!2sVia%20Roma%2C%2084084%20Fisciano%20SA!5e0!3m2!1sit!2sit!4v1656688995724!5m2!1sit!2sit" frameborder="10" style="border:30" allowfullscreen></iframe>
 </div>
 
+<script>
+let slideIndex = 0;
+showSlides();
 
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+</script>
 
 </body>
 	<%@ include file="./fragments/footer.jsp"%>
 </html>
 
 
-  }

@@ -66,37 +66,16 @@ tbody.catalogo tr:hover {background-color: #036991 ;}
 	list-style-type: none;
 }
 
-.user-container ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	border: groove;
-	border-radius: inherit;
-}
 
-.user-container li {
-	border-bottom: 1px solid #e7e7e7;
-}
-
-.user li {
-	text-align: center;
-	border-bottom: 1px solid #555;
-}
-
-.user li:last-child {
-	border-bottom: none;
-}
-
-div.user-container {
-	margin-left: auto;
+div.user{
+	width: 400px;
+  	border: 1px solid black;
+  	padding: 12px 20px 12px;
+ 	margin-left: auto;
 	margin-right: auto;
-	border-collapse: collapse;
-	overflow: hidden;
-	max-width: 800px;
-	width: 100%;
-	margin: 0 auto;
-	border-radius: 6px;
+	background-color:#f0f0f5;
 }
+
 
 div.user {
 	margin-left: auto;
@@ -119,10 +98,13 @@ div.user-label {
 input.user[type=text], input.user[type=email],
 input.user[type=date],
 select {
-  	width: 50%;
-  	padding: 0px 10px 20px 20px;
-  	border: 1px;
-  	outline: none;
+   	width: 100%;
+  	padding: 12px 20px;
+  	margin: 8px;
+  	display: inline-block;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	box-sizing: border-box;
 }
 
 input.user[type=date], select {
@@ -208,7 +190,8 @@ thead.details tr{
 	height: 50px;
 	background: #036991;
 	font-size: 16px;
-	border:1px solid black
+	border:1px solid black;
+	color: white;
 }
 
 tbody.details tr{
@@ -643,27 +626,37 @@ input:checked + .slide-container .nav label { display: block; }
 
 .centered {
  
- transform: translate(-50%, -50%);
- color:white;
-
+  transform: translate(-50%, -50%);
+  color:white;
   font-size: 3vmax;
   margin: 40px;
-  
   position: absolute;
   bottom: 15%;
   left: 30%;
-  font-family: 'Abril Fatface', 
+  font-family: 'Abril Fatface';
   line-height: 10%;
  
 }
-.centered .p{
+.centered p{
 	
     margin:20px;
     font-size:2vmax;
     color:white;
-   font-family: 'Abril Fatface';
+   	font-family: 'Abril Fatface';
     letter-spacing:2px;
- 
-  border-top:2px solid white;padding:5px; 
+ 	border-top:2px solid white;
+  	padding:5px; 
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 
 

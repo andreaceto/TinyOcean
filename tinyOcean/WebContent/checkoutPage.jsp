@@ -54,7 +54,7 @@ if (session == null || session.getAttribute("currentSessionUser") == null || ((U
 	%>
 	<h1>Riepilogo dell'ordine</h1>
 	<div>
-		<div class="user-container">
+		<div class="user">
 			<ul>
 				<li>
 					<div class="user-payment">
@@ -73,17 +73,20 @@ if (session == null || session.getAttribute("currentSessionUser") == null || ((U
 						</select>
 						<br>
 						<div class="user-link">
-							<a href="addressRegistration.jsp">Inserisci un nuovo indirizzo</a>
-						</div>
+				<button class="btn">
+                 <a href="addressRegistration.jsp" style="text-decoration: none; color:white;">Inserisci un nuovo indirizzo</a>
+                </button>
+					</div>
 						<br>
 					</div>
 				</li>
 			</ul>
 		</div>
 	</div>
+	
 	<br>
 	<div>
-		<div class="user-container">
+		<div class="user">
 			<ul>
 				<li>
 					<div class="user-payment">
@@ -100,9 +103,12 @@ if (session == null || session.getAttribute("currentSessionUser") == null || ((U
 							%>
 						</select>
 						<br>
+						
 						<div class="user-link">
-							<a href="paymentMethodRegistration.jsp">Inserisci un nuovo metodo di pagamento</a>
-						</div>
+				<button class="btn">
+                 <a href="paymentMethodRegistration.jsp" style="text-decoration: none; color:white;">Inserisci un nuovo metodo di pagamento</a>
+                </button>
+					</div>
 						<br>
 					</div>
 				</li>

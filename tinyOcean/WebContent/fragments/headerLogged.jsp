@@ -12,7 +12,7 @@
 	<section class="navigation">
 		<div class="nav-container">
 			<div class="brand">
-				<a href="Homepage.jsp">Tiny Ocean</a>
+				<a href="Homepage.jsp"><span class="text-primary">T</span>iny<span class="text-secondary">O</span>cean</a>
 			</div>
 			
 			<nav>
@@ -44,6 +44,7 @@
 						</ul>
 					</li>
 					<li><a href="cart.jsp">Carrello</a></li>
+					<li><a href="Homepage.jsp">Home</a></li>
 					<%
 					}
 					%>
