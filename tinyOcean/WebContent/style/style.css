@@ -42,7 +42,7 @@ tbody td{
 
 thead.catalogo tr{
 	height: 50px;
-	background: #FFED86;
+	background: #036991;
 	font-size: 16px;
 	border:1px solid black
 }
@@ -52,7 +52,7 @@ tbody.catalogo tr {
 	border: 1px solid black; 
 }
 
-tbody.catalogo tr:hover {background-color: #a992d3 ;}
+tbody.catalogo tr:hover {background-color: #036991 ;}
 
 
 .user ul {
@@ -201,12 +201,12 @@ tfoot.cart th{
 	height: 50px;
 }
 
-tbody.cart tr:hover {background-color: #a992d3 ;}
+tbody.cart tr:hover {background-color: #036991 ;}
 
 
 thead.details tr{
 	height: 50px;
-	background: #FFED86;
+	background: #036991;
 	font-size: 16px;
 	border:1px solid black
 }
@@ -224,11 +224,11 @@ tfoot.details td{
 	text-align: center;
 }
 
-tbody.details tr:hover {background-color: #a992d3 ;}
+tbody.details tr:hover {background-color: #036991 ;}
 
 thead.address tr{
 	height: 50px;
-	background: #FFED86;
+	background: #036991;
 	font-size: 16px;
 	border:1px solid black
 }
@@ -248,7 +248,7 @@ tfoot.address td{
 
 thead.paymentMethod tr{
 	height: 50px;
-	background: #FFED86;
+	background: #036991;
 	font-size: 16px;
 	border:1px solid black
 }
@@ -272,14 +272,14 @@ tbody.paymentMethod tr {
 	border: 1px solid black; 
 }
 
-tbody.paymentMethod tr:hover {background-color: #a992d3 ;}
+tbody.paymentMethod tr:hover {background-color: #036991 ;}
 
 .wrapper {
 	text-align: center;
 }
 
 .btn {
-	background-color: #a6a6c4;
+	background-color: #0c3a4d;
  	border: none;
  	position: center;
   	color: white;
@@ -293,7 +293,7 @@ tbody.paymentMethod tr:hover {background-color: #a992d3 ;}
 
 .btn-center {
 	margin-top: 15px;
- 	background-color: #a6a6c4;
+ 	background-color: #0c3a4d;
  	border: none;
  	color: white;
  	padding: 15px 32px;
@@ -314,7 +314,7 @@ tbody.paymentMethod tr:hover {background-color: #a992d3 ;}
 }
 
 .btn:hover, .btn-center:hover {
-	background-color: #a992d3;
+	background-color: #036991;
 }
 
  div.catalogo,  div.address, div.paymentMethod {
@@ -639,4 +639,31 @@ input#img-6:checked ~ .carousel-dots label#img-dot-6 {
 
 
 input:checked + .slide-container .nav label { display: block; }
+
+
+.centered {
+ 
+ transform: translate(-50%, -50%);
+ color:white;
+
+  font-size: 3vmax;
+  margin: 40px;
+  
+  position: absolute;
+  bottom: 15%;
+  left: 30%;
+  font-family: 'Abril Fatface', 
+  line-height: 10%;
+ 
+}
+.centered .p{
+	
+    margin:20px;
+    font-size:2vmax;
+    color:white;
+   font-family: 'Abril Fatface';
+    letter-spacing:2px;
+ 
+  border-top:2px solid white;padding:5px; 
+
 
