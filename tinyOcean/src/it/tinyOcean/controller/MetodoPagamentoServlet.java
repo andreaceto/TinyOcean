@@ -58,7 +58,7 @@ public class MetodoPagamentoServlet extends HttpServlet {
 		
 		MetodoPagamentoDAO.doSave(user, paymentMethod);
 
-		response.sendRedirect("checkoutPage.jsp");
+		response.sendRedirect("CheckOut");
 		}
 
 	/**

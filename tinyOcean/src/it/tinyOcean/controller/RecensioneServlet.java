@@ -23,7 +23,7 @@ import it.tinyOcean.model.ResponseStatusMessage;
 /**
  * Servlet implementation class RecensioneServlet
  */
-@WebServlet("/RecensioneServlet")
+@WebServlet("/Recensione")
 public class RecensioneServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Gson gson = new Gson();
@@ -40,12 +40,12 @@ public class RecensioneServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
-		HttpSession sessione = request.getSession();
-		UtenteBean utente = (UtenteBean) sessione.getAttribute("utente");
+		HttpSession session = request.getSession();
+		UtenteBean user = (UtenteBean) session.getAttribute("currentSessionUser");
 		
-		if(utente==null)
+		if(user==null)
 		{
-			RequestDispatcher view = request.getRequestDispatcher("loginPage.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("/loginPage.jsp");
 			view.include(request, response);
 			
 		}	
@@ -56,19 +56,20 @@ public class RecensioneServlet extends HttpServlet {
 			ArticoloDAO productDao = new ArticoloDAO();
 			try {
 				prodotto = productDao.doRetrieveByKey(Integer.valueOf(request.getParameter("articolo")));
-				System.out.println(prodotto.toString());
-				recensione.setUtente(utente);
+				recensione.setUtente(user);
 				recensione.setArticolo(prodotto);
 				recensione.setCommento(request.getParameter("commento"));
 				recensione.setVoto(Integer.valueOf(request.getParameter("voto")));
-				recensione.setDataPubblicazione(LocalDate.parse(request.getParameter("data")));
+				recensione.setDataPubblicazione(LocalDate.now());
 						
 				recensioneDAO.doSave(recensione);
 						
-				request.setAttribute("prodotto", prodotto);
-						
-				RequestDispatcher view = request.getRequestDispatcher("productDetails.jsp");
-				view.forward(request, response);
+//				request.setAttribute("prodotto", prodotto);
+//						
+//				RequestDispatcher view = request.getRequestDispatcher("/Articolo?action=read&id=" + request.getParameter("articolo"));
+//				view.forward(request, response);
+				
+				response.sendRedirect("Articolo?action=read&id=" + request.getParameter("articolo"));
 						
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -78,29 +79,30 @@ public class RecensioneServlet extends HttpServlet {
 		if(action.equals("check")) {
 			ArticoloBean prodotto;
 			ArticoloDAO productDao = new ArticoloDAO();
-			HttpSession sess = request.getSession();
-			UtenteBean usr = (UtenteBean) sess.getAttribute("utente");
+			RecensioneDAO recensioneDAO = new RecensioneDAO();
 			
 			try {
 				String messaggio = new String();
-				prodotto = productDao.doRetrieveByKey(Integer.valueOf(request.getParameter("articolo")));
-				boolean result = false;
+				prodotto = productDao.doRetrieveByKey(Integer.valueOf(request.getParameter("id")));
+				boolean acquired = false;
+				boolean reviewed = false;
 				
-				if(usr!=null) {
-					result = ArticoloDAO.isAcquired(prodotto, usr);
+				if(user!=null) {
+					acquired = ArticoloDAO.isAcquired(prodotto, user);
+					reviewed = RecensioneDAO.isAlreadyReviewed(prodotto, user);
 				}
 				else {
-					messaggio ="non acquistato";
+					messaggio ="non recensibile";
 				}
 				
-				if(result == true){
-					messaggio = "acquistato";
+				if(acquired && !reviewed){
+					messaggio = "recensibile";
 				}
 				
-				else if(result !=true || utente==null) {
-					messaggio = "non acquistato";
+				else if(!acquired || user==null || reviewed) {
+					messaggio = "non recensibile";
 				}
-				
+
 					response.setStatus(200);
 					response.getWriter().print(gson.toJson(new ResponseStatusMessage(200, messaggio)));
 					response.getWriter().flush();

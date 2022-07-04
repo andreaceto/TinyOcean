@@ -33,10 +33,11 @@ public class CatalogoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-
+		
+		String sort = request.getParameter("sort");
 		try {
 			session.removeAttribute("products");
-			session.setAttribute("products", model.doRetrieveAll("id"));
+			session.setAttribute("products", model.doRetrieveAll(sort));
 		} catch (SQLException e) {
 			System.out.println("Error:" + e.getMessage());
 		}

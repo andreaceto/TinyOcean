@@ -50,6 +50,7 @@ $(document).ready(function(event) {
 		document.getElementById('concludi').disabled = true;
 	}
 	
+	$.get("CheckOut");
 	
 	$("button").click(function(event) {
 

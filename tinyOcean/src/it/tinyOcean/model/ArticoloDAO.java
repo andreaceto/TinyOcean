@@ -149,6 +149,7 @@ public class ArticoloDAO implements ArticoloModel {
 		if (order != null && !order.equals("")) {
 			selectSQL += " ORDER BY " + order;
 		}
+		System.out.println(selectSQL);
 
 		try {
 			connection = ds.getConnection();
@@ -174,16 +175,12 @@ public class ArticoloDAO implements ArticoloModel {
 			}
 
 		} finally {
-			try {
 				if (preparedStatement != null)
 					preparedStatement.close();
-			} finally {
-				if (connection != null)
-					connection.close();
 			}
-		}
 		return products;
-	}
+		}
+		
 	
 	public static boolean isAcquired(ArticoloBean articolo, UtenteBean user) throws SQLException {
 		String controllaAcquisto = "SELECT * FROM utente U JOIN (SELECT * FROM ordine O JOIN contenuto C ON O.numOrdine=C.ordine WHERE C.articolo = ?) J "+

@@ -73,9 +73,9 @@ if (session == null || session.getAttribute("currentSessionUser") == null || ((U
 						</select>
 						<br>
 						<div class="user-link">
-				<button class="btn">
-                 <a href="addressRegistration.jsp" style="text-decoration: none; color:white;">Inserisci un nuovo indirizzo</a>
-                </button>
+
+                 			<a href="addressRegistration.jsp" style="text-decoration: none; color:#0c3a4d;">Inserisci un nuovo indirizzo</a>
+
 					</div>
 						<br>
 					</div>
@@ -105,9 +105,9 @@ if (session == null || session.getAttribute("currentSessionUser") == null || ((U
 						<br>
 						
 						<div class="user-link">
-				<button class="btn">
-                 <a href="paymentMethodRegistration.jsp" style="text-decoration: none; color:white;">Inserisci un nuovo metodo di pagamento</a>
-                </button>
+
+             				<a href="paymentMethodRegistration.jsp" style="text-decoration: none; color:#0c3a4d;">Inserisci un nuovo metodo di pagamento</a> 
+
 					</div>
 						<br>
 					</div>

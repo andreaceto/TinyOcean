@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.tinyOcean.model.ArticoloBean, it.tinyOcean.model.RecensioneBean"%>
+<%@ page contentType="text/html; charset=UTF-8" import="java.util.*,it.tinyOcean.model.ArticoloBean, it.tinyOcean.model.RecensioneBean, it.tinyOcean.model.RecensioneDAO, it.tinyOcean.model.FotoDAO, it.tinyOcean.model.FotoBean"%>
 
 <% 
 if (session == null || session.getAttribute("currentSessionUser") == null || ((UtenteBean) session.getAttribute("currentSessionUser")).getNome() == "guest"){ 
@@ -12,61 +12,52 @@ if (session == null || session.getAttribute("currentSessionUser") == null || ((U
 } 
 %>
 
-<%
-ArticoloBean product = (ArticoloBean) request.getAttribute("product");
-List<RecensioneBean> elencoRecensioni = (List<RecensioneBean>) request.getAttribute("recensioni");
-%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Dettagli</title>
-	<link href="./style/style.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href = "./style/productDetails.css" rel = "stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<%
+	ArticoloBean product = (ArticoloBean) request.getAttribute("product");
+	RecensioneDAO recensioneDao = new RecensioneDAO();
+	ArrayList<RecensioneBean> elencoRecensioni = recensioneDao.getRecensioniByProduct(product);
+	FotoDAO fotodao = new FotoDAO();
+	LinkedList<FotoBean> foto = (LinkedList<FotoBean>) fotodao.getPhotos(product);
+	%>
+	<title><%= product.getNome()%></title>
 </head>
 <body>
-	<h2>Dettagli</h2>
-	<%
-	if (product != null) {
-	%>
-		<div class=details>
-			<table>
-				<thead class=details>
-					<tr>
-						<th>Produttore</th>
-						<th>Nome</th>
-						<th>Prezzo</th>
-						<th>Descrizione</th>
-						<th>Peso</th>
-						<th>Altezza</th>
-						<th>Larghezza</th>
-						<th>Lunghezza</th>
-						<th>Saldo</th>
-					</tr>
-				</thead>
-				<tbody class=details>
-					<tr>
-						<td><%=product.getProduttore()%></td>
-						<td><%=product.getNome()%></td>
-						<td><%=String.format("%.2f", product.getPrezzo())   %> &euro;</td>
-						<td><%=product.getDescrizione()%></td>
-						<td><%=product.getPeso()%></td>
-						<td><%=product.getAltezza()%></td>
-						<td><%=product.getLarghezza()%></td>
-						<td><%=product.getLunghezza()%></td>
-						<td><%=product.getSaldo()%></td>
-					</tr>
-				</tbody>
-			</table>
-			<br>
-			<div class="wrapper">
-				<form class=details action="Articolo?action=addC&id=<%=product.getId()%>" method="post" id="checkout">
-					<button class=btn type="submit">Aggiungi al carrello</button>
-				</form>
-			</div>
-		</div>
+
+	<p class = "product-title-nascosto"><%= product.getProduttore() + " " + product.getNome() %></p>
+	      <div class = "container">
+	      
+            <div class ="item">
+             	<img class="image" src="data:image/jpg;base64,<%= foto.get(0).getBase64img()  %>">
+            </div>
+            
+            <div class="item-descrizione">
+                <p class = "product-title"><%= product.getProduttore() + " " + product.getNome() %></p>
+                <p class = "descrizione"><%= product.getDescrizione()%></p>
+                <p class = "product-title">&euro; <%= String.format("%.02f", product.getPrezzo()) %> <span style="font-size:0.85rem;">iva inc.</span></p>
+                <p class = "product-title-nascosto">&euro; <%= String.format("%.02f", product.getPrezzo()) %> <span style="font-size:0.85rem;">iva inc.</span></p>
+                <p class = "container-bottone">
+                
+                	<button class="aggiungi"><a href="Articolo?action=addC&id=<%=product.getId()%>">Aggiungi al carrello</a></button>
+                
+                </p>
+            </div>
+        </div>
+
+		<br><br>
+		
 		
         <div class="recensioni" id="parte-recensione" style="display:none">
-        	<form action="RecensioneServlet" method="get" class="form-recensione">
+	        <div class="intestazione">
+	        	<span class="recensionii-header">Lascia una recensione</span>
+	        </div>
+        	<form action="Recensione" method="get" class="form-recensione">
         		<input type="hidden" name="articolo" value="<%=product.getId()%>">
          
         		<!-- DIV VOTO -->
@@ -95,12 +86,11 @@ List<RecensioneBean> elencoRecensioni = (List<RecensioneBean>) request.getAttrib
         
         
 		<div class="intestazione">        
-        	<span class="prodotti-consigliati-header">Recensioni</span>
+        	<span class="recensioni-header">Recensioni</span>
         	<br>
         </div>
-        <%}%>
         <section id="testimonials">
-		<%for(RecensioneBean r : elencoRecensioni) {%>
+		<%for(RecensioneBean r : elencoRecensioni) { %>
 		    <!--testimonials-box-container------>
 		    <div class="testimonial-box-container">
 		        <!--BOX-1-------------->
@@ -112,7 +102,7 @@ List<RecensioneBean> elencoRecensioni = (List<RecensioneBean>) request.getAttrib
 		                    <!--img---->
 		                    <div class="profile-img">
 		                    
-		                        <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
+		                        <img src="https://cdn4.iconfinder.com/data/icons/sea-life-23/64/yellow_tang_fish_ocean_sea_sea_life-512.png" />
 		                    </div>
 		                    <!--name-and-username-->
 		                    <div class="name-user">
@@ -131,10 +121,43 @@ List<RecensioneBean> elencoRecensioni = (List<RecensioneBean>) request.getAttrib
 		            </div>
 		        </div>
 		    </div>
-		<%}%>
+		<%} %>
 		</section>
 	    <script>
-         //aggiungere  
+	    $(document).ready(function () {
+        	//se il prodotto è stato acquistato mostra il pulsante recensisci
+        	//se l'user non ha acquistato non mostra il pulsante
+        	function ControllaRecensione(product) {
+				return $.ajax({
+					url : "Recensione",
+					type : 'GET',
+					async : false,
+					cache : false,
+					timeout : 30000,
+					dataType : "json",
+					data : {
+						action : "check",
+						id : product
+					},
+					success : function(data) {
+						return data
+					},
+					fail : function(msg) {
+						return true;
+					}
+				});
+			}
+		        
+		        var res = ControllaRecensione(<%=product.getId()%>);
+				if (res.responseJSON.message == "recensibile") {
+					$("#parte-recensione").show();
+				} else{	
+					$('#rex').attr("placeholder", "  PUOI RECENSIRE SOLO SE HAI ACQUISTATO IL PRODOTTO")
+				}
+			
+			
+
+        });//chiusura JQUERY
         </script>
 </body>
 	<%@ include file="./fragments/footer.jsp" %>

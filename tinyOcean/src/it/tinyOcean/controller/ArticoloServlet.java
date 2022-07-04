@@ -178,16 +178,18 @@ public class ArticoloServlet extends HttpServlet {
 		request.setAttribute("cart", cart);
 		
 		String sort = request.getParameter("sort");
+		
+			try {
+				request.removeAttribute("products");
+				request.setAttribute("products", model.doRetrieveAll(sort));
+			} catch (SQLException e) {
+				System.out.println("Error:" + e.getMessage());
+			}		
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Homepage.jsp");
+			dispatcher.include(request, response);
 
-		try {
-			request.removeAttribute("products");
-			request.setAttribute("products", model.doRetrieveAll(sort));
-		} catch (SQLException e) {
-			System.out.println("Error:" + e.getMessage());
-		}
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Homepage.jsp");
-		dispatcher.include(request, response);
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

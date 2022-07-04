@@ -54,7 +54,8 @@ public class IndirizzoServlet extends HttpServlet {
 			request.getSession().setAttribute("currentSessionUser",user);
 		}
 		IndirizzoDAO.doSave(user, address);
-		response.sendRedirect("checkoutPage.jsp");
+		
+		response.sendRedirect("CheckOut");
 
 	}
 

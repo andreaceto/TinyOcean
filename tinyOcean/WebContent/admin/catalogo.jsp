@@ -3,6 +3,8 @@
 <%@page import="java.util.Collection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%@include file="./adminHeader.jsp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +19,7 @@
 	%>
 	<h2 style="text-align: center;">Inserisci nuovo articolo</h2>
 	<div class=details>
-		<form method="post" id="a_form" action="product">
+		<form method="post" id="a_form" action="Articolo">
 			<table>
 				<thead class=details>
 					<tr>
@@ -101,12 +103,12 @@
 		<table>
 			<thead class=details>
 				<tr>
-					<th><a href="product?sort=id">Id </a></th>
-					<th><a href="product?sort=produttore">Produttore</a></th>
-					<th><a href="product?sort=nome">Nome</a></th>
+					<th><a href="Catalogo?sort=id">Id </a></th>
+					<th><a href="Catalogo?sort=produttore">Produttore</a></th>
+					<th><a href="Catalogo?sort=nome">Nome</a></th>
 					<th>Descrizione</th>
-					<th><a href="product?sort=prezzo">Prezzo</a></th>
-					<th><a href="product?sort=stock">Stock</a></th>
+					<th><a href="Catalogo?sort=prezzo">Prezzo</a></th>
+					<th><a href="Catalogo?sort=stock">Stock</a></th>
 					<th>Peso</th>
 					<th>Altezza</th>
 					<th>Larghezza</th>
@@ -157,7 +159,7 @@
 						<INPUT type=number min="0" class="saldo" name=saldo value=<%=bean.getSaldo()%>>
 					</td>	
 					<td>
-						<INPUT class="btn-det" type=SUBMIT value="update">
+						<a href="Articolo?action=delete&id=<%=bean.getId()%>" style="text-decoration: none">Elimina</a>
 					</td>	
 	    		</tr>
 	    		<%
@@ -170,7 +172,7 @@
 				<%
 				}
 				%>
-			</tbody>	   	
+			</tbody>   	
 		</table>
 	</div>
 </body>

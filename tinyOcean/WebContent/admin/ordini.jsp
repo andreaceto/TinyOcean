@@ -5,6 +5,8 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%@include file="./adminHeader.jsp"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +22,16 @@
 	List<OrdineBean> ordini = new LinkedList<OrdineBean>();
 	ordini = (LinkedList<OrdineBean>) session.getAttribute("ordini");
 	%>
+
 	<div class="details">
+	<form id= selector action=OrdineArchivio>
+			<INPUT type="date" name="startdate"> <INPUT type="date"
+				name="enddate"> <INPUT type="submit" value="cerca">
+		</form>
+		<form action=OrdineArchivio>
+			<INPUT type="text" name="username"> <INPUT type="submit"
+				value="cerca">
+		</form>
 		<table>
 			<thead class="details">
 				<tr>
@@ -47,6 +58,7 @@
 					}
 					%>
 			</tbody>
+			
 		</table>
 	</div>
 				<%
@@ -56,20 +68,6 @@
 				<%
 				}
 				%>
-	<div class="date_input">
-		<form id= selector action=OrderArchive>
-			<INPUT type="date" name="startdate"> <INPUT type="date"
-				name="enddate"> <INPUT type="submit" value="cerca">
-		</form>
-	</div>
-	
-	<div>
-		<form action=OrderArchive>
-			<INPUT type="text" name="username"> <INPUT type="submit"
-				value="cerca">
-		</form>
-		
-	</div>
 	
 </body>
 </html>

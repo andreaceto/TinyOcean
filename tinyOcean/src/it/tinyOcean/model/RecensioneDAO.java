@@ -8,6 +8,9 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -30,7 +33,7 @@ public class RecensioneDAO implements ModelInterface<RecensioneBean> {
 	}
 	
 	@Override
-	public void doSave(RecensioneBean bean) throws SQLException {
+	public synchronized void doSave(RecensioneBean bean) throws SQLException {
 		String controllaAcquisto = "SELECT * FROM utente U JOIN (SELECT * FROM ordine O JOIN contenuto C ON O.numOrdine=C.ordine WHERE C.articolo = ?) J "+
 									"ON U.username = J.utente WHERE U.username=?";
 		
@@ -80,7 +83,7 @@ public class RecensioneDAO implements ModelInterface<RecensioneBean> {
 	  }
 	 
 	
-	public ArrayList<RecensioneBean> getRecensioniByProduct(ArticoloBean prod) throws Exception{
+	public synchronized ArrayList<RecensioneBean> getRecensioniByProduct(ArticoloBean prod) throws Exception{
 		String sql = "SELECT * FROM "+ TABLE_NAME + " WHERE articolo = ?";
 		ArrayList<RecensioneBean> lista = new ArrayList<>();
 		RecensioneBean result = new RecensioneBean();
@@ -89,39 +92,28 @@ public class RecensioneDAO implements ModelInterface<RecensioneBean> {
 			try(PreparedStatement statement = conn.prepareStatement(sql)){
 				statement.setInt(1, prod.getId());
 				ResultSet rs = statement.executeQuery();
+				
 				ArticoloDAO articoloDAO = new ArticoloDAO();
 				UtenteDAO utenteDAO = new UtenteDAO();
 				
 				while(rs.next()) {
-					try {
-						result.setUtente(utenteDAO.doRetrieveByKey(rs.getString("utente")));
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					try {
-						result.setArticolo(articoloDAO.doRetrieveByKey(rs.getInt("articolo")));
-					} catch (SQLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					} catch (Exception e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
+					
+					result.setUtente(utenteDAO.doRetrieveByKey(rs.getString("utente")));
+					result.setArticolo(articoloDAO.doRetrieveByKey(rs.getInt("articolo")));
 					result.setVoto(rs.getInt("voto"));
 					result.setCommento(rs.getString("commento"));
 					result.setDataPubblicazione(rs.getDate("dataPubblicazione").toLocalDate());
-					
 					lista.add(result);
+					
 				}
 			}
 		}
 		
-		
+		Set<RecensioneBean> set = new HashSet<>(lista);
+		lista.clear();
+		lista.addAll(set);
 		return lista;
+
 	}
 
 	@Override
@@ -146,6 +138,24 @@ public class RecensioneDAO implements ModelInterface<RecensioneBean> {
 		}
 		
 		return result;
+	}
+	
+	public static boolean isAlreadyReviewed(ArticoloBean articolo, UtenteBean user) throws SQLException {
+		String controllaRecensione = "SELECT * FROM "+TABLE_NAME+" WHERE articolo = ? AND utente = ?";
+
+		try(Connection con = ds.getConnection()){
+			try(PreparedStatement ps = con.prepareStatement(controllaRecensione)){	
+				ps.setInt(1, articolo.getId());
+				ps.setString(2, user.getUsername());
+
+				ResultSet rs = ps.executeQuery();
+				if(rs.next())
+					return true;
+
+				else 
+					return false;
+			}
+		}
 	}
 	
 

@@ -24,13 +24,10 @@
 					if (((UtenteBean) session.getAttribute("currentSessionUser")).isAdmin())
 					{ 
 					%>
-						<li><a href="#">Ciao, <%=((UtenteBean) session.getAttribute("currentSessionUser")).getNome()%></a>
-							<ul class="nav-dropdown">
-								<li><a href="./Logout">Esci</a></li>
-							</ul>
-						</li>
+						<li><a href="#">Ciao, <%=((UtenteBean) session.getAttribute("currentSessionUser")).getNome()%></a></li>
 						<li><a href="./OrdineArchivio">Storico ordini</a></li>
 						<li><a href="./Catalogo">Catalogo</a></li>
+						<li><a href="./Logout">Esci</a></li>
 					
 					<%
 					} else {
